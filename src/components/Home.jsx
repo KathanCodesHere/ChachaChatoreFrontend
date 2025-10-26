@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HomeCards from "../components/HomeCards";
 
 const Home = () => {
@@ -11,7 +12,20 @@ const Home = () => {
       </section>
 
       {/* Fullscreen Cards Section */}
-      <HomeCards />
+      {/* <HomeCards /> */}
+      <div className="flex justify-center gap-1 mt-10">
+        <Link to='/chacha' className="absolute left-80 -rotate-17 top-40">
+        <h2 className="font-anton font-bold text-white uppercase text-4xl mt-50">Chacha Chatore</h2>
+        </Link>
+        
+        <div className="w-1/3 ">
+          <img src="/images/Srk.png" alt="" />
+        </div>
+        <Link to='/production' className="absolute right-80 rotate-17 top-40">
+        <h2 className="font-anton font-bold text-white uppercase text-4xl mt-50">Chacha Chatore <br />Productions</h2>
+        </Link>
+      </div>
+      
     </div>
   );
 };
