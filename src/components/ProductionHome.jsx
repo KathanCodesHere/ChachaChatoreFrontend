@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCameraRetro, FaHamburger, FaLaugh, FaPlay } from "react-icons/fa";
 import NavBarP from "./NavBarP";
+import ScrollImageReveal from "./ScrollImageReveal";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
@@ -151,6 +152,7 @@ const ProductionHome = () => {
         </div>
       </motion.section>
 
+      <ScrollImageReveal/>
       {/* WORK GRID */}
       <motion.section
         id="work"
