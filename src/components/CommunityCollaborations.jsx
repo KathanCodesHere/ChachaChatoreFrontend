@@ -21,7 +21,7 @@ const CommunityCollaborations = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-anton text-[#e86b40] mb-4">
+        <h2 className="text-4xl md:text-6xl font-modak text-[#e86b40] mb-4">
            Where Stories Meet People
         </h2>
         <p className="text-lg md:text-xl font-open text-[#f0ecd9]/90 max-w-3xl mx-auto">

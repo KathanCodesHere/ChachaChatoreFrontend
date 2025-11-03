@@ -33,14 +33,14 @@ const StorySection = () => {
     <section className="relative bg-[#1b1b1b] text-[#f0ecd9] py-24 px-6 md:px-16 overflow-hidden">
       {/* Heading */}
       <div className="max-w-6xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-anton text-[#e86b40] mb-6">
+        <h2 className="text-4xl md:text-6xl font-modak text-[#FF10F0] mb-6">
           The Way I Tell Stories
         </h2>
       </div>
 
       {/* Vertical Line */}
       <div className="relative max-w-3xl mx-auto">
-        <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-[3px] bg-[#e86b40]/60 h-full rounded-full shadow-[0_0_10px_#e86b40]" />
+        <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-[3px] bg-[#FF10F0]/60 h-full rounded-full shadow-[0_0_10px_#e86b40]" />
 
         {/* Story Points */}
         <div className="flex flex-col items-center space-y-20">
@@ -58,11 +58,11 @@ const StorySection = () => {
               className="relative flex flex-col items-center text-center w-full max-w-lg md:max-w-3xl"
             >
               {/* Connector Dot */}
-              <div className="w-7 h-7 rounded-full bg-[#e86b40] border-2 border-[#f0ecd9] shadow-[0_0_10px_#e86b40] mb-8" />
+              <div className="w-7 h-7 rounded-full bg-[#FF10F0] border-2 border-[#f0ecd9] shadow-[0_0_10px_#e86b40] mb-8" />
 
               {/* Text */}
               <div className="bg-[#242424] p-8 mb-4 rounded-2xl shadow-lg w-full">
-                <h3 className="text-2xl md:text-3xl font-anton text-[#e86b40] mb-3">
+                <h3 className="text-2xl md:text-4xl font-bold font-dyna text-[#10ff24] mb-3">
                   {point.title}
                 </h3>
                 <p className="text-base sm:text-lg font-open">{point.desc}</p>
@@ -72,7 +72,7 @@ const StorySection = () => {
               <motion.img
                 src={point.img}
                 alt={point.title}
-                className="w-38 h-38 md:w-48 md:h-48 rounded-full object-cover border-4 border-[#e86b40] mt-6 shadow-[0_0_15px_#e86b40]"
+                className="w-38 h-38 md:w-48 md:h-48 rounded-full object-cover border-4 border-[#FF10F0] mt-6 shadow-[0_0_15px_#e86b40]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -94,6 +94,9 @@ const StorySection = () => {
         Because food is never just food — it’s an emotion, a memory, a story
         waiting to be shared.
       </motion.p>
+      <div className="flex justify-center">
+          <img src="/images/Cc.gif" alt="" />
+      </div>  
     </section>
   );
 };

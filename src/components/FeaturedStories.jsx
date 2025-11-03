@@ -43,7 +43,7 @@ const FeaturedStories = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-anton text-[#e86b40] mb-3">
+        <h2 className="text-4xl md:text-6xl font-modak text-[#EE4B2B] mb-3">
           Featured Stories
         </h2>
         <p className="text-lg md:text-xl text-[#f0ecd9]/80 font-open">
@@ -122,6 +122,9 @@ const FeaturedStories = () => {
         animate={{ opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
+      <div className="flex justify-center my-4">
+        <img src="/images/ccc.gif" alt=""  />
+      </div>
     </section>
   );
 };

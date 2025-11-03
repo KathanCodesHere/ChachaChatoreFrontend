@@ -35,13 +35,13 @@ const AboutSection = () => {
     <section
       ref={ref}
       id="about"
-      className="relative bg-[#1b1b1b] text-[#f0ecd9] py-28 px-6 md:px-16 overflow-hidden"
+      className="relative bg-[#1b1b1b] text-[#7DF9FF] py-28 px-6 md:px-16 overflow-hidden"
     >
       {/* Floating Animated Icons */}
       {floatingIcons.map((item) => (
         <motion.div
           key={item.id}
-          className="absolute text-[#e86b40] text-3xl sm:text-4xl opacity-30"
+          className="absolute text-[#40cfe8] text-3xl sm:text-4xl opacity-30"
           style={{
             top: item.top,
             bottom: item.bottom,
@@ -81,10 +81,10 @@ const AboutSection = () => {
             <img
               src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=687"
               alt="Chacha Chatore"
-              className="rounded-2xl shadow-[0_0_25px_#e86b4055] w-full max-w-sm md:max-w-md object-cover"
+              className="rounded-2xl shadow-[0_0_25px_#7DF9FF] w-full max-w-sm md:max-w-md object-cover"
             />
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-[#e86b40]/10 rounded-2xl blur-xl group-hover:bg-[#e86b40]/20 transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-[#e86b40]/10 rounded-2xl blur-xl group-hover:bg-[#7DF9FF]/20 transition-all duration-500"></div>
           </motion.div>
         </motion.div>
 
@@ -94,7 +94,7 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, scaleY: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="hidden md:block w-[2px] bg-[#e86b40] h-96 rounded-full mx-auto origin-top shadow-[0_0_15px_#e86b40]"
+          className="hidden md:block w-[2px] bg-[#7DF9FF] h-96 rounded-full mx-auto origin-top shadow-[0_0_15px_#e86b40]"
         />
 
         {/* Right: Text */}
@@ -105,12 +105,15 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="flex-1 text-center md:text-left font-open"
         >
-          <h2 className="text-5xl font-anton text-[#e86b40] mb-6 uppercase tracking-wide">
+          <h2 className="text-6xl font-modak text-[#FFFF00]  mb-6 uppercase tracking-wide">
             Who is CHACHA CHATORE?
           </h2>
+          <h2 className="text-6xl font-modak text-[#FFFF00]  mb-6 uppercase tracking-wide">
+           चाचा चटोरे
+          </h2>
           <p className="text-lg leading-relaxed mb-4 text-[#f0ecd9]/90">
-            I’m not just a <span className="text-[#e86b40] font-semibold">food blogger</span>.
-            I’m a storyteller — from <span className="text-[#e86b40] font-semibold">gali ke thelas</span>{" "}
+            I’m not just a <span className="text-[#7DF9FF] font-semibold">food blogger</span>.
+            I’m a storyteller — from <span className="text-[#7DF9FF] font-semibold">gali ke thelas</span>{" "}
             to five-star platters, I capture the soul of flavor.
           </p>
           <p className="text-lg leading-relaxed mb-4 text-[#f0ecd9]/80">
@@ -119,7 +122,7 @@ const AboutSection = () => {
           </p>
           <p className="text-lg leading-relaxed text-[#f0ecd9]/75">
             Through every reel, bite, and story — my goal is simple:
-            <span className="text-[#e86b40] font-semibold"> connect people, places, and plates.</span>
+            <span className="text-[#7DF9FF] font-semibold"> connect people, places, and plates.</span>
           </p>
         </motion.div>
       </div>
