@@ -23,11 +23,11 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="font-anton text-4xl sm:text-5xl md:text-6xl leading-tight text-[#e86b40] drop-shadow-lg">
+        <h1 className="font-dyna font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-green-500 to-red-600 drop-shadow-lg">
           Kisse Kahaniyan with <br /> Chacha Ji
         </h1>
 
-        <p className="mt-6 text-lg sm:text-xl text-[#f0ecd9]/90 font-open">
+        <p className="mt-6 text-lg sm:text-xl text-[#f0ecd9]/90 font-anton font-normal">
           Not just food videos. Not just vlogs. This is about people, plates,
           and the untold stories behind them.
         </p>

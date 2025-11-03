@@ -88,6 +88,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Chacha Chatore. All rights reserved.
         </p>
       </motion.div>
+      
     </footer>
   );
 };

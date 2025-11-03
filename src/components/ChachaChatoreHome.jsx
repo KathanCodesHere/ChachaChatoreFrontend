@@ -8,6 +8,8 @@ import FeaturedStories from './FeaturedStories'
 import CommunityCollaborations from './CommunityCollaborations'
 import CallToActionSection from './CallToActionSection'
 import Footer from './Footer'
+import AllTextsSection from './AllTextsSection'
+import ClientsSection from './ClientsSection'
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
   useEffect(() => {
@@ -34,10 +36,12 @@ const ChachaChatoreHome = () => {
       <CursorGlow />
       <NavBarP/>
       <HeroSection/>
+      <AllTextsSection/>
       <AboutSection/>
       <StorySection/>
       <FeaturedStories/>
       <CommunityCollaborations/>
+      {/* <ClientsSection/> */}
       <CallToActionSection/>
       <Footer/>
     </div>
