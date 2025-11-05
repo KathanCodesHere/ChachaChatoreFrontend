@@ -89,7 +89,7 @@ const CallToActionSection = () => {
               className="mt-4 bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-semibold shadow-md transition-all duration-300"
               type="submit"
             >
-              🚀 Send Message
+              Send Message
             </motion.button>
           </div>
         </motion.form>

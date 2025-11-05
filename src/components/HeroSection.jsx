@@ -27,17 +27,17 @@ const HeroSection = () => {
           Kisse Kahaniyan with <br /> Chacha Ji
         </h1>
 
-        <p className="mt-6 text-lg sm:text-xl text-[#f0ecd9]/90 font-anton font-normal">
+        <p className="mt-6 text-lg sm:text-2xl text-[#f0ecd9]/90 font-comic font-bold">
           Not just food videos. Not just vlogs. This is about people, plates,
           and the untold stories behind them.
         </p>
 
         {/* 🔹 CTA Buttons */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
-          <button className="bg-[#e86b40] hover:bg-[#f0ecd9] hover:text-[#e86b40] text-[#f0ecd9] px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+          <button className="bg-[#e86b40] hover:bg-[#f0ecd9] hover:text-[#e86b40] text-[#f0ecd9] px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 font-comic">
             Watch Stories
           </button>
-          <button className="border border-[#f0ecd9] hover:bg-[#f0ecd9] hover:text-[#e86b40] px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+          <button className="border border-[#f0ecd9] hover:bg-[#f0ecd9] hover:text-[#e86b40] px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 font-comic">
             Follow the Journey
           </button>
         </div>

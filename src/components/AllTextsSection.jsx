@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import Particles from "./reactbits/Particles";
 gsap.registerPlugin(ScrollTrigger);
 
 const AllTextsSection = () => {
@@ -32,10 +32,22 @@ const AllTextsSection = () => {
   const text = "Chacha Chatore";
 
   return (
-    <div className="py-15 px-5">
-      <div className="other py-30 sm:py-50">
+    <div className="py-15 px-5 relative">
+      <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+  <Particles
+    particleColors={['#ffffff', '#ffffff']}
+    particleCount={500}
+    particleSpread={10}
+    speed={0.1}
+    particleBaseSize={100}
+    moveParticlesOnHover={true}
+    alphaParticles={false}
+    disableRotation={false}
+  />
+</div>
+      <div className="other py-50 sm:py-50 ">
         <div className="flex items-center justify-center">
-            <h2 className="text-white text-4xl sm:text-8xl font-modak uppercase text-center tracking-wider">
+            <h2 className="text-white text-4xl sm:text-8xl font-dyna font-semibold uppercase text-center tracking-wider">
             Hey
             </h2>
             <div className="w-44 ">
@@ -45,7 +57,7 @@ const AllTextsSection = () => {
         </div>
         
         <div
-          className="text-[#EE4B2B] text-4xl sm:text-8xl font-modak uppercase text-center tracking-wider"
+          className="text-[#EE4B2B] text-4xl sm:text-8xl font-dyna font-semibold  uppercase text-center tracking-wider"
           ref={textRef}
         >
           {text.split("").map((char, index) => (
@@ -55,7 +67,7 @@ const AllTextsSection = () => {
           ))}
         </div>
 
-        <h2 className="text-white text-4xl sm:text-8xl font-modak uppercase text-center tracking-wider mt-4">
+        <h2 className="text-white text-4xl sm:text-8xl font-dyna font-semibold uppercase text-center tracking-wider mt-4">
           Here
         </h2>
       </div>
