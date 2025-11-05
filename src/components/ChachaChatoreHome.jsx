@@ -1,14 +1,13 @@
 import React,{useEffect} from 'react'
-import NavBarc from './NavBarc'
 import NavBarP from './NavBarP'
-import HeroSection from './HeroSection'
-import AboutSection from './AboutSection'
-import StorySection from './StorySection'
-import FeaturedStories from './FeaturedStories'
-import CommunityCollaborations from './CommunityCollaborations'
-import CallToActionSection from './CallToActionSection'
-import Footer from './Footer'
-import AllTextsSection from './AllTextsSection'
+import HeroSection from './ChachaComponents/HeroSection'
+import AboutSection from './ChachaComponents/AboutSection'
+import StorySection from './ChachaComponents/StorySection'
+import FeaturedStories from './ChachaComponents/FeaturedStories'
+import CommunityCollaborations from './ChachaComponents/CommunityCollaborations'
+import CallToActionSection from './ChachaComponents/CallToActionSection'
+import Footer from './ChachaComponents/Footer'
+import AllTextsSection from './ChachaComponents/AllTextsSection'
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
   useEffect(() => {
