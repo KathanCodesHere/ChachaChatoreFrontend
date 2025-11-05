@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Particles from "./reactbits/Particles";
+import Particles from "../reactbits/Particles";
 gsap.registerPlugin(ScrollTrigger);
 
 const AllTextsSection = () => {

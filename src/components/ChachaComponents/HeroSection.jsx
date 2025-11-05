@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
+import GradientText from '../reactbits/GradientText'
 const HeroSection = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center">
@@ -23,9 +24,18 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="font-dyna font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-green-500 to-red-600 drop-shadow-lg">
+        <GradientText
+  className="font-dyna font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight"
+  colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+  animationSpeed={3}
+  showBorder={false}
+>
+  Kisse Kahaniyan with <br /> Chacha Ji
+</GradientText>
+
+        {/* <h1 className="font-dyna font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-green-500 to-red-600 drop-shadow-lg">
           Kisse Kahaniyan with <br /> Chacha Ji
-        </h1>
+        </h1> */}
 
         <p className="mt-6 text-lg sm:text-2xl text-[#f0ecd9]/90 font-comic font-bold">
           Not just food videos. Not just vlogs. This is about people, plates,
