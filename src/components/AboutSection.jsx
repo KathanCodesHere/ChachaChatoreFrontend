@@ -105,22 +105,22 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="flex-1 text-center md:text-left font-open"
         >
-          <h2 className="text-6xl font-modak text-[#FFFF00]  mb-6 uppercase tracking-wide">
+          <h2 className="text-3xl sm:text-6xl font-dyna font-medium text-[#FFFF00]  mb-6 uppercase tracking-wide">
             Who is CHACHA CHATORE?
           </h2>
-          <h2 className="text-6xl font-modak text-[#FFFF00]  mb-6 uppercase tracking-wide">
+          <h2 className="text-3xl sm:text-6xl font-alk font-bold text-[#FFFF00]  mb-6 uppercase tracking-wide">
            चाचा चटोरे
           </h2>
-          <p className="text-lg leading-relaxed mb-4 text-[#f0ecd9]/90">
+          <p className="text-lg sm:text-2xl font-comic leading-relaxed mb-4 text-[#f0ecd9]/90">
             I’m not just a <span className="text-[#7DF9FF] font-semibold">food blogger</span>.
             I’m a storyteller — from <span className="text-[#7DF9FF] font-semibold">gali ke thelas</span>{" "}
             to five-star platters, I capture the soul of flavor.
           </p>
-          <p className="text-lg leading-relaxed mb-4 text-[#f0ecd9]/80">
+          <p className="text-lg sm:text-2xl font-comic leading-relaxed mb-4 text-[#f0ecd9]/80">
             Every plate carries a memory — laughter, rain, chai pe charcha, and
             that perfect jalebi crunch that takes you home.
           </p>
-          <p className="text-lg leading-relaxed text-[#f0ecd9]/75">
+          <p className="text-lg sm:text-2xl font-comic leading-relaxed text-[#f0ecd9]/75">
             Through every reel, bite, and story — my goal is simple:
             <span className="text-[#7DF9FF] font-semibold"> connect people, places, and plates.</span>
           </p>

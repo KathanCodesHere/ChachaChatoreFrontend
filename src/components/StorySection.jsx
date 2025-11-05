@@ -33,7 +33,7 @@ const StorySection = () => {
     <section className="relative bg-[#1b1b1b] text-[#f0ecd9] py-24 px-6 md:px-16 overflow-hidden">
       {/* Heading */}
       <div className="max-w-6xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-6xl font-modak text-[#FF10F0] mb-6">
+        <h2 className="text-3xl md:text-6xl font-dyna font-medium text-[#FF10F0] mb-6">
           The Way I Tell Stories
         </h2>
       </div>
@@ -62,10 +62,10 @@ const StorySection = () => {
 
               {/* Text */}
               <div className="bg-[#242424] p-8 mb-4 rounded-2xl shadow-lg w-full">
-                <h3 className="text-2xl md:text-4xl font-bold font-dyna text-[#10ff24] mb-3">
+                <h3 className="text-2xl md:text-4xl font-medium font-dyna text-[#10ff24] mb-3">
                   {point.title}
                 </h3>
-                <p className="text-base sm:text-lg font-open">{point.desc}</p>
+                <p className="text-base sm:text-2xl font-semibold font-comic">{point.desc}</p>
               </div>
 
               {/* Image */}
@@ -89,7 +89,7 @@ const StorySection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
         viewport={{ once: true }}
-        className="text-center text-lg md:text-xl font-open mt-20 italic text-[#f0ecd9]/90 max-w-2xl mx-auto"
+        className="text-center text-xl md:text-2xl font-semibold font-comic mt-20 italic text-[#f0ecd9]/90 max-w-2xl mx-auto"
       >
         Because food is never just food — it’s an emotion, a memory, a story
         waiting to be shared.

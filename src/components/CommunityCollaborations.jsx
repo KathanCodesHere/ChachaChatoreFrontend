@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const brands = [
@@ -21,10 +22,10 @@ const CommunityCollaborations = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-6xl font-modak text-[#e86b40] mb-4">
+        <h2 className="text-4xl md:text-6xl font-dyna font-medium text-[#e86b40] mb-4">
            Where Stories Meet People
         </h2>
-        <p className="text-lg md:text-xl font-open text-[#f0ecd9]/90 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl font-comic font-bold text-[#f0ecd9]/90 max-w-3xl mx-auto">
           Chacha Chatore isn’t just me — it’s the community we’ve built. From food
           walks and tasting events to online collaborations with creators, the
           idea is always to celebrate food together.
@@ -45,7 +46,7 @@ const CommunityCollaborations = () => {
           {[...brands, ...brands,...brands, ...brands].map((brand, index) => (
             <div
               key={index}
-              className="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 rounded-full bg-[#242424] flex items-center justify-center p-4 shadow-lg"
+              className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full bg-[#242424] flex items-center justify-center p-4 shadow-lg"
             >
               <img
                 src={brand.logo}
@@ -63,12 +64,12 @@ const CommunityCollaborations = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
-        className="mt-12 flex flex-wrap justify-center gap-6"
+        className="mt-12 flex flex-wrap justify-center font-comic gap-6"
       >
-        <button className="bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#b72d2d] transition-all duration-300">
+        <button className="bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#b72d2d] transition-all duration-300">
           Join a Food Walk
         </button>
-        <button className="border-2 border-[#e86b40] text-[#e86b40] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-all duration-300">
+        <button className="border-2 border-[#e86b40] text-[#e86b40] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-all duration-300">
           Partner with Me
         </button>
       </motion.div>
