@@ -6,22 +6,32 @@ const ScrollImageReveal = () => {
     const data=[{
         id:1,
         image:"https://images.unsplash.com/photo-1511268559489-34b624fbfcf5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
-        title:"Brand Stratergy",
+        title:"Short-form Masala (Reels & Shorts)",
+        desc:"Concept → Shoot → Edit → Upload-ready"
     },
     {
         id:2,
         image:"https://images.unsplash.com/photo-1633533452148-a9657d2c9a5f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1331",
-        title:"Visual Identity",
+        title:"Long-form Thali (Brand Films)",
+        desc:" Full platter storytelling with scripts, shoots & post-production"
     },
     {
         id:3,
-        image:"https://images.unsplash.com/photo-1618329027137-a520b57c6606?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
-        title:"Content Production",
+        image:"https://images.unsplash.com/photo-1683721003111-070bcc053d8b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1400",
+        title:"Social Media Tandoor",
+        desc:" Hot content calendars, growth tactics, and ad guidance to keep you trending"
     },
     {
         id:4,
-        image:"https://images.unsplash.com/photo-1758524572081-5a84e02768ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
-        title:"Interactive Experiences",
+        image:"https://images.unsplash.com/photo-1618329027137-a520b57c6606?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
+        title:"Editing & Motion Garnish",
+        desc:"Smooth cuts, subtitles, motion graphics — that perfect finishing tadka"
+    },
+    {
+        id:5,
+        image:"https://plus.unsplash.com/premium_photo-1684017834450-21747b64d666?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171",
+        title:"Influencer Zaika",
+        desc:"Events, collabs, and activations — bringing real people to the table"
     },
 ];
 
@@ -46,14 +56,16 @@ const ScrollImageReveal = () => {
     })
 
   return (
-    <div className='bg-neutral-950 text-white py-96'>
+    <div className='bg-[#1b1b1b] text-white py-18'>
+        <h2 className='text-[#e86b40] text-3xl  sm:text-5xl font-anton text-center mb-8'>On the Menu - Our Services</h2>
         {data.map((service,i)=>{
             return(
                 <div key={i} className="slider flex flex-col md:flex-row border-b border-white/25 p-3">
-                    <div className='w-[40%] text-4xl flex-start md:self-end  p-8'>
-                        <h1 className='font-bold uppercase font-anton'>{service.title}</h1>
+                    <div className='w-full sm:w-[40%] tracking-wider flex-start md:self-end p-8'>
+                        <h1 className='font-bold text-3xl uppercase font-anton'>{service.title}</h1>
+                        <h5>{service.desc}</h5>
                     </div>
-                    <div className= 'w-[100%] md:w-[60%] h-88'>
+                    <div className= 'w-full md:w-[60%] h-88'>
                         <div className='image w-full h-full bg-cover bg-left' style={{backgroundImage:`url(${service.image})`}}></div>
                     </div>
                 </div>
