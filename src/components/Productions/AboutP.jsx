@@ -1,4 +1,5 @@
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 const AboutP = () => {
   return (
@@ -10,6 +11,7 @@ const AboutP = () => {
         transition={{ duration: 0.8 }}
         className="bg-[#1b1b1b] text-[#f0ecd9] py-20 px-6 md:px-16"
       >
+        
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.img
             src="/assets/about-photo.jpg"
