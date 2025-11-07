@@ -1,12 +1,26 @@
 import React from 'react'
-
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
-
 import { FaCameraRetro, FaHamburger, FaLaugh, FaPlay } from "react-icons/fa";
+import LightRays from '../reactbits/LightRays';
+
 const HeroProductions = () => {
   return (
-    <header className="relative min-h-[90vh] bg-[#111] flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
+    <header className="relative min-h-[90vh] bg-[#1b1b1b] flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
+        <div style={{ width: '100%', height: '800px', position: 'absolute' }}>
+                          <LightRays
+                            raysOrigin="top-center"
+                            raysColor="#fff"
+                            raysSpeed={1.5}
+                            lightSpread={0.8}
+                            rayLength={1.2}
+                            followMouse={true}
+                            mouseInfluence={0.1}
+                            noiseAmount={0.1}
+                            distortion={0.05}
+                            className="custom-rays"
+                  />
+                </div>
         {/* Floating icons for fun */}
         <motion.div
           initial={{ y: -10 }}
