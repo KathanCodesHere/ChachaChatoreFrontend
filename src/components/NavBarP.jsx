@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 const NavBarP = () => {
@@ -35,7 +36,7 @@ const NavBarP = () => {
           to={currentPath}
           className="flex items-center gap-2 hover:opacity-90 transition"
         >
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#e86b40] to-[#ff9966] flex items-center justify-center font-bold text-white shadow-md">
+          <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#e86b40] to-[#ff9966] flex items-center justify-center font-bold text-white shadow-md">
             CC
           </div>
           {currentPath === "/chacha" ? (
@@ -56,7 +57,7 @@ const NavBarP = () => {
               className="relative group transition-all duration-300 text-[#fff5eb]"
             >
               <span className="group-hover:text-[#e86b40]">{item.label}</span>
-              <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-[#e86b40] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 bottom-[-3px] w-0 h-0.5 bg-[#e86b40] transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
 

@@ -1,5 +1,6 @@
 // Loader.jsx
 import React, { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 const Loader = () => {
@@ -66,7 +67,7 @@ const Loader = () => {
               }}
               className="inline-block text-[#e86b40] font-semibold"
             >
-              Chacha Ji 🎥
+              Chacha Ji 
             </motion.span>
           </motion.h2>
 
