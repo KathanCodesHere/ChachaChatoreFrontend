@@ -11,11 +11,11 @@ const HeroProductions = () => {
                           <LightRays
                             raysOrigin="top-center"
                             raysColor="#fff"
-                            raysSpeed={1.5}
-                            lightSpread={0.8}
-                            rayLength={1.2}
+                            raysSpeed={1.1}
+                            lightSpread={0.4}
+                            rayLength={3}
                             followMouse={true}
-                            mouseInfluence={0.1}
+                            mouseInfluence={0.7}
                             noiseAmount={0.1}
                             distortion={0.05}
                             className="custom-rays"

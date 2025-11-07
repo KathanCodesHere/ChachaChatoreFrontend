@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 // ✅ Your story data
@@ -43,7 +44,7 @@ const FeaturedStories = () => {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-6xl font-dyna font-medium text-[#EE4B2B] mb-3">
+        <h2 className="text-4xl md:text-6xl font-dyna font-medium text-[#00BFFF] mb-3">
           Featured Stories
         </h2>
         <p className="text-xl md:text-2xl text-[#f0ecd9]/80 font-comic font-semibold">
@@ -66,7 +67,7 @@ const FeaturedStories = () => {
             viewport={{ once: true }}
             className="relative bg-[#1c1c1c] rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(232,107,64,0.15)] 
                        hover:shadow-[0_0_25px_rgba(232,107,64,0.4)] transition-all duration-500 
-                       w-[240px] sm:w-[260px] md:w-[280px] aspect-[9/16] flex flex-col group cursor-pointer"
+                       w-60 sm:w-[260px] md:w-[280px] aspect-9/16 flex flex-col group cursor-pointer"
           >
             {/* Video */}
             <div className="relative flex-1 overflow-hidden">
@@ -79,7 +80,7 @@ const FeaturedStories = () => {
               ></iframe>
 
               {/* YouTube Style Gradient Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-black/70 via-black/40 to-transparent"></div>
 
               {/* Floating play pulse effect */}
               <motion.div
@@ -105,10 +106,10 @@ const FeaturedStories = () => {
 
             {/* Title + Description */}
             <div className="p-3 bg-[#181818] flex flex-col justify-between">
-              <h3 className="text-lg font-anton text-[#f0ecd9] truncate mb-1">
+              <h3 className="text-lg font-anton text-[#00BFFF] truncate mb-1">
                 {story.title}
               </h3>
-              <p className="text-sm text-[#f0ecd9]/70 font-open line-clamp-2">
+              <p className="text-md font-comic text-[#f0ecd9]/70 line-clamp-2">
                 {story.desc}
               </p>
             </div>
@@ -118,7 +119,7 @@ const FeaturedStories = () => {
 
       {/* Background YouTube-style light animation */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-[#e86b40]/5 via-transparent to-transparent pointer-events-none"
+        className="absolute inset-0 bg-linear-to-t from-[#e86b40]/5 via-transparent to-transparent pointer-events-none"
         animate={{ opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />

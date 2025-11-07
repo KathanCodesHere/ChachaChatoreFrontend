@@ -32,7 +32,7 @@ const AllTextsSection = () => {
   const text = "Chacha Chatore";
 
   return (
-    <div className="py-15 px-5 relative">
+    <div className="py-15  relative">
       <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
   <Particles
     particleColors={['#ffffff', '#ffffff']}

@@ -60,14 +60,14 @@ const CTA = () => {
           
           {/* Primary CTA Button */}
           <div className="animate-fade-in animation-delay-400">
-            <button className="btn-street text-xl px-12 py-6 text-white border-white border">
+            <button className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-white border-white border">
               See Our Work
             </button>
           </div>
           
           {/* Tagline */}
           <div className="mt-16 pt-12 border-t-2 border-dashed border-border animate-fade-in animation-delay-600">
-            <p className="font-display text-2xl md:text-3xl text-muted-foreground italic">
+            <p className="font-display text-xl md:text-3xl text-muted-foreground italic">
               "15-second reel ya 15-minute film — sab kuch banta hai! We serve stories that stick. "
             </p>
           </div>

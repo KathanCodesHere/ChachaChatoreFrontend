@@ -6,11 +6,14 @@ import NavBarP from "./NavBarP";
 import ScrollImageReveal from "./Productions/ScrollImageReveal";
 import HeroProductions from "./Productions/HeroProductions";
 import AboutP from "./Productions/AboutP";
-import Works from "./Productions/Works";
+// import Works from "./Productions/Works";
 import Footer from "./ChachaComponents/Footer";
 import CurvedLoop from "./reactbits/CurvedLoop";
 import  WhyUs from "./Productions/WhyUs";
 import CTA from "./Productions/CTA";
+import HeroP from "./Productions/HeroP";
+import Testimonials from "./Productions/Testimonials";
+import FeaturedWorkP from "./Productions/FeaturedWorkP";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
@@ -35,9 +38,16 @@ const CursorGlow = () => {
 const ProductionHome = () => {
   return (
     <div className="bg-[#111] mt-[0.1px] pt-3">
+      {/* for glowing cursor */}
       <CursorGlow />
+
+      {/* this is the navbar */}
       <NavBarP />
+
+      {/* hero with heading productions */}
       <HeroProductions/>
+
+      {/* this is infinite text */}
       <CurvedLoop 
   marqueeText="Chacha Chatore ✦ Productions ✦ Creative ✦ Camera ✦ Editing ✦ "
   speed={2}
@@ -46,12 +56,25 @@ const ProductionHome = () => {
   interactive={true}
   className="custom-text-style text-[8rem] sm:text-5xl"
 />
+
+    {/* this is another hero */}
+      <HeroP/>
+
+      {/* About section */}
       <AboutP/>
+
+      {/* Services section */}
       <ScrollImageReveal/>
+
       
       {/* WORK GRID */}
       {/* <Works/> */}
+
       <WhyUs/>
+
+      <FeaturedWorkP/>  
+      {/* Testimonials here */}
+      <Testimonials/>
       {/* CTA SECTION */}
       <CTA/>
       <Footer/>
