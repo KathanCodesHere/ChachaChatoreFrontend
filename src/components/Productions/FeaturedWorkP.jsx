@@ -7,21 +7,21 @@ const works = [
     category: "Documentary Series",
     gradient: "from-amber-500 to-orange-600",
     poster: "https://images.unsplash.com/photo-1676286255143-d46e4f3b1fdd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cG9ydHJhaXQlMjBtb2RlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
-    video: "/videos/road.mp",
+    video: "/videos/road.mp4",
   },
   {
     title: "Midnight Biryani Diaries",
     category: "Brand Film",
     gradient: "from-red-500 to-pink-600",
     poster: "/posters/biryani.jpg",
-    video: "/videos/road.mp",
+    video: "/videos/road.mp4",
   },
   {
     title: "Spice Route Stories",
     category: "Short Film",
     gradient: "from-yellow-500 to-amber-600",
     poster: "/posters/spice.jpg",
-    video: "/videos/road.mp",
+    video: "/videos/road.mp4",
   },
 ];
 
