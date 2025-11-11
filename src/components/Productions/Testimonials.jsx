@@ -32,7 +32,7 @@ const Testimonials = () => {
 ];
   return (
     <div className='py-10 bg-[#1b1b1b]'>
-        <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-white leading-none mb-6">
+        <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
               People Who’ve    
               <span className="text-[#e86b40] block mt-2">Tasted</span>Our Work
             </h2>

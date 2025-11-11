@@ -29,7 +29,7 @@ const WhyUs = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="font-anton leading-12 sm:leading-20 text-white text-3xl md:text-7xl mb-6 animate-fade-in-up">
+          <h2 className="font-anton leading-12 sm:leading-20 text-[#f0ecd9] text-3xl md:text-7xl mb-6 animate-fade-in-up">
             Why Choose <span className="text-[#e86b40]">Chacha Chatore Productions?</span>
           </h2>
         </div>
@@ -60,7 +60,7 @@ const WhyUs = () => {
                 </div>
                 
                 {/* Title */}
-                <h3 className="font-anton uppercase text-xl md:text-3xl text-white mb-3 group-hover:text-[#e86b40] transition-colors">
+                <h3 className="font-anton uppercase text-xl md:text-3xl text-[#f0ecd9] mb-3 group-hover:text-[#e86b40] transition-colors">
                   {reason.title}
                 </h3>
                 
@@ -75,8 +75,8 @@ const WhyUs = () => {
         
         {/* Bottom Accent */}
         <div className="flex items-center justify-center gap-4 mt-16 animate-fade-in animation-delay-600">
-          <div className="h-0.5 w-24 bg-linear-to-r from-transparent to-white"></div>
-          <span className="font-open text-xs sm:text-sm tracking-widest text-center text-white">STREET TO STUDIO</span>
+          <div className="h-0.5 w-24 bg-linear-to-r from-transparent to-[#f0ecd9]"></div>
+          <span className="font-open text-xs sm:text-sm tracking-widest text-center text-[#f0ecd9]">STREET TO STUDIO</span>
           <div className="h-0.5 w-24 bg-linear-to-l from-transparent to-white"></div>
         </div>
       </div>

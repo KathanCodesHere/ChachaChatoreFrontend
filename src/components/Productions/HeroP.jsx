@@ -23,11 +23,12 @@ const HeroP = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl px-6">
-        <h1 className="font-anton uppercase text-6xl md:text-8xl text-[#fdf6e3] mb-6 tracking-widest transition-transform hover:scale-105">
+        <h1 className="font-bold text-[4rem] md:text-[6rem] uppercase leading-none font-anton text-[#e86b40] cursor-pointer">
+          
           Stories With <br /> Tandoori Tadka
         </h1>
 
-      <p className="text-[#f0ecd9] text-lg md:text-2xl max-w-3xl mx-auto mb-10 font-open-sans">
+      <p className="text-[#f0ecd9] text-lg md:text-2xl max-w-3xl mx-auto mb-10 font-open-sans cursor-pointer">
       We don’t just create content. We serve stories — hot, authentic, and scroll-stopping.
       </p>
 
@@ -37,7 +38,7 @@ const HeroP = () => {
           <button
             className="
               group relative inline-flex items-center gap-3 
-              px-10 py-4 text-xl font-semibold text-white rounded-xl
+              px-10 py-4 text-xl font-semibold text-[#f0ecd9] rounded-xl
               bg-gradient-to-r from-[#ff7a3d] to-[#ff501a] 
               transition-all duration-300 
               hover:scale-110 hover:shadow-[0_0_35px_rgba(255,100,50,0.9)]
@@ -49,10 +50,10 @@ const HeroP = () => {
 
           <button
             className="
-              border-2 border-[#e86b40] text-[#e86b40] 
+              border-2 border-[#e86b40] text-[#f0ecd9] 
               px-8 py-3 text-xl rounded-md 
               transition-all duration-300 
-              hover:bg-[#e86b40] hover:text-white
+              hover:bg-[#e86b40] hover:text-#f0ecd9
             "
           >
             Work With Us
