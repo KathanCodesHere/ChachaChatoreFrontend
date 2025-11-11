@@ -38,10 +38,10 @@ const FeaturedWorkP = () => {
       <div className="container mx-auto px-4 relative z-10">
 
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-white leading-none mb-6">
+          <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
               <span className="text-[#e86b40]">Our Recipe </span>in Action
           </h2>
-          <p className="font-open text-white text-lg mt-4">
+          <p className="font-open text-[#f0ecd9] text-lg mt-4">
             Each project is crafted with flavor and passion.
           </p>
         </div>

@@ -13,7 +13,7 @@ const CTA = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Headline */}
           <div className="mb-12 animate-fade-in-up">
-            <h2 className="font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-white leading-none mb-6">
+            <h2 className="font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
               Let's Cook
               <span className="text-[#e86b40] block mt-2">Something Together</span>
             </h2>
@@ -30,9 +30,9 @@ const CTA = () => {
               className="menu-card flex flex-col items-center justify-center p-8 group hover:scale-105 transition-transform border-white border"
             >
               <Mail className="w-12 h-12 text-[#e86b40] mb-4 group-hover:scale-110 transition-transform" />
-              <span className="font-anton text-white text-xl mb-2">Email karo </span>
+              <span className="font-anton text-[#f0ecd9] text-xl mb-2">Email karo </span>
               <span className="font-open text-sm text-muted-foreground">(Professional waala)</span>
-              <span className="font-open text-xs text-white mt-1">hello@chachachatore.com</span>
+              <span className="font-open text-xs text-[#f0ecd9] mt-1">hello@chachachatore.com</span>
             </a>
             
             <a
@@ -40,9 +40,9 @@ const CTA = () => {
               className="menu-card flex flex-col items-center justify-center p-8 group hover:scale-105 transition-transform border-white border"
             >
               <Phone className="w-12 h-12 text-[#e86b40] mb-4 group-hover:scale-110 transition-transform" />
-              <span className="font-anton text-white text-xl mb-2">Call karo </span>
+              <span className="font-anton text-[#f0ecd9] text-xl mb-2">Call karo </span>
               <span className="font-open text-sm text-muted-foreground">(Urgent hai toh)</span>
-              <span className="font-open text-xs text-white mt-1">+91 98765 43210</span>
+              <span className="font-open text-xs text-[#f0ecd9] mt-1">+91 98765 43210</span>
             </a>
             
             <a
@@ -52,15 +52,15 @@ const CTA = () => {
               className="menu-card flex flex-col items-center justify-center p-8 group hover:scale-105 transition-transform border-white border"
             >
               <Instagram className="w-12 h-12 text-[#e86b40] mb-4 group-hover:scale-110 transition-transform" />
-              <span className="font-anton text-white text-xl mb-2">Slide into DMs </span>
+              <span className="font-anton text-[#f0ecd9] text-xl mb-2">Slide into DMs </span>
               <span className="font-open text-sm dont-open text-muted-foreground">(Cool kids only)</span>
-              <span className="font-open text-xs text-white mt-1">@chachachatore</span>
+              <span className="font-open text-xs text-[#f0ecd9] mt-1">@chachachatore</span>
             </a>
           </div>
           
           {/* Primary CTA Button */}
           <div className="animate-fade-in animation-delay-400">
-            <button className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-white border-white border">
+            <button className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-[#f0ecd9] border-white border">
               See Our Work
             </button>
           </div>
