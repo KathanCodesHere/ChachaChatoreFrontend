@@ -13,7 +13,7 @@ const brands = [
 
 const CommunityCollaborations = () => {
   return (
-    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-24 px-6 md:px-16 overflow-hidden" id='comm'>
+    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-16 px-4 md:px-12 overflow-hidden" id='comm'>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -33,7 +33,7 @@ const CommunityCollaborations = () => {
       </motion.div>
 
       {/* Infinite Logo Marquee */}
-      <div className="relative w-full overflow-hidden py-8">
+      <div className="relative w-full overflow-hidden py-6">
         <motion.div
           className="flex gap-10"
           animate={{ x: ["0%", "-100%"] }}

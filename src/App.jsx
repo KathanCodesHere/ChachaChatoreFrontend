@@ -5,6 +5,7 @@ import Chacha from './components/ChachaChatoreHome'
 import Production from './components/ProductionHome'
 // import Work from './components/Work'
 import Loader from './components/Loader'
+import AdminLogin from "./components/AdminLogin"; 
 const App = () => {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/chacha' element={<Chacha/>}></Route>
         <Route path='/production' element={<Production/>}></Route>
         {/* <Route path='/work' element={<Work/>}></Route> */}
+        <Route path="/admin" element={<AdminLogin />} ></Route>
       </Routes>
     </BrowserRouter>
   )
