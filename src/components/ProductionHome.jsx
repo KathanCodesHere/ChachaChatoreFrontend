@@ -12,8 +12,9 @@ import CurvedLoop from "./reactbits/CurvedLoop";
 import  WhyUs from "./Productions/WhyUs";
 import CTA from "./Productions/CTA";
 import HeroP from "./Productions/HeroP";
-import Testimonials from "./Productions/Testimonials";
+//import Testimonials from "./Productions/Testimonials";
 import FeaturedWorkP from "./Productions/FeaturedWorkP";
+import NewTestimonial from "./Productions/NewTestimonial";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
@@ -74,7 +75,9 @@ const ProductionHome = () => {
 
       <FeaturedWorkP/>  
       {/* Testimonials here */}
-      <Testimonials/>
+      {/*<Testimonials/> */}
+      {/* NewTestimonials here */}
+      <NewTestimonial/>
       {/* CTA SECTION */}
       <CTA/>
       <Footer/>
