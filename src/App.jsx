@@ -5,7 +5,9 @@ import Chacha from './components/ChachaChatoreHome'
 import Production from './components/ProductionHome'
 // import Work from './components/Work'
 import Loader from './components/Loader'
-import AdminLogin from "./components/AdminLogin"; 
+import AdminLogin from "./components/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ const App = () => {
         <Route path='/production' element={<Production/>}></Route>
         {/* <Route path='/work' element={<Work/>}></Route> */}
         <Route path="/admin" element={<AdminLogin />} ></Route>
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   )
