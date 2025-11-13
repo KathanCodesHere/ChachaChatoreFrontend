@@ -13,14 +13,14 @@ const brands = [
 
 const CommunityCollaborations = () => {
   return (
-    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-16 px-4 md:px-12 overflow-hidden" id='comm'>
+    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-20 px-0 overflow-hidden relative" id='comm'>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-16 px-6 md:px-16"
       >
         <h2 className="text-4xl md:text-6xl font-dyna font-medium text-[#FF007F] mb-4">
            Where Stories Meet People
