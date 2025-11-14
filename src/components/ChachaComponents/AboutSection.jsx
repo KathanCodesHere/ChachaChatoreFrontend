@@ -35,7 +35,7 @@ const AboutSection = () => {
     <section
       ref={ref}
       id="about"
-      className="relative bg-[#1b1b1b] text-[#7DF9FF] py-28 px-6 md:px-16 overflow-hidden"
+      className="relative bg-[#1b1b1b] text-[#7DF9FF] py-20 md:py-28 px-6 md:px-16 overflow-hidden min-h-[80vh]"
     >
       {/* Floating Animated Icons */}
       {floatingIcons.map((item) => (
@@ -81,7 +81,7 @@ const AboutSection = () => {
             <img
               src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=687"
               alt="Chacha Chatore"
-              className="rounded-2xl shadow-[0_0_25px_#7DF9FF] w-full max-w-sm md:max-w-md object-cover"
+              className="rounded-2xl shadow-[0_0_25px_#7DF9FF] w-full max-w-sm md:max-w-md h-[70vh] object-cover"
             />
             {/* Glow effect */}
             <div className="absolute inset-0 bg-[#e86b40]/10 rounded-2xl blur-xl group-hover:bg-[#7DF9FF]/20 transition-all duration-500"></div>

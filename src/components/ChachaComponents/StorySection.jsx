@@ -6,25 +6,25 @@ const storyPoints = [
     id: 1,
     title: "Street-side vibes",
     desc: "Relatable, unfiltered, raw.",
-    img: "https://images.unsplash.com/photo-1759659136459-fad26e62a675?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
+    video: "https://www.youtube.com/shorts/51OCVGigWLQ",
   },
   {
     id: 2,
     title: "Desi humor",
     desc: "A little spice, a little satire.",
-    img: "https://images.unsplash.com/photo-1737656700846-67a83cb5b13d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
+    video: "https://www.youtube.com/watch?v=GUv-nBm8-ds"
   },
   {
     id: 3,
     title: "Heart of India",
     desc: "Celebrating local culture with global relatability.",
-    img: "https://images.unsplash.com/photo-1757451631936-a4d7a51954c0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=914",
+    video: "https://www.youtube.com/watch?v=q_-vr4mO1xg",
   },
   {
     id: 4,
     title: "Beyond food",
     desc: "People, places, history, and the quirks that make them unique.",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80",
+    video: "https://www.youtube.com/shorts/Iyti-cNVgxs",
   },
 ];
 
@@ -68,16 +68,24 @@ const StorySection = () => {
                 <p className="text-base sm:text-2xl font-semibold font-comic">{point.desc}</p>
               </div>
 
-              {/* Image */}
-              <motion.img
-                src={point.img}
-                alt={point.title}
-                className="w-38 h-38 md:w-48 md:h-48 rounded-full object-cover border-4 border-[#FF10F0] mt-6 shadow-[0_0_15px_#e86b40]"
+             {/* Rounded Square for YouTube Video */}
+              <motion.div
+                className="w-64 h-50 md:w-80 md:h-64 rounded-2xl border-4 border-[#FF10F0] shadow-[0_0_15px_#e86b40] overflow-hidden mt-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-              />
+              >
+                <iframe
+                  src={point.video
+                    .replace("shorts/", "embed/")
+                    .replace("watch?v=", "embed/")}
+                  title={point.title}
+                  className="w-full h-full object-cover"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -31,7 +31,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="py-20 bg-[#1b1b1b]">
+    <div className="py-20 bg-black">
       {/* Heading */}
       <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
         People Who’ve

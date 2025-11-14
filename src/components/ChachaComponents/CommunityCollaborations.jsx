@@ -66,7 +66,7 @@ const CommunityCollaborations = () => {
         viewport={{ once: true }}
         className="mt-12 flex flex-wrap justify-center font-comic gap-6 "
       >
-        <button className="bg-[#FFf] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#bf0c66] transition-all duration-300">
+        <button className="bg-[#FF007F] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#bf0c66] transition-all duration-300">
           Join a Food Walk
         </button>
         <button className="border-2 border-[#FF007F] text-[#FF007F] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#FF007F] hover:text-[#f0ecd9] transition-all duration-300">

@@ -33,7 +33,7 @@ const FeaturedWorkP = () => {
 //   };
 
   return (
-    <section id="work" className="py-24 md:py-32 bg-neutral-900 relative overflow-hidden">
+    <section id="work" className="py-24 md:py-32 bg-black relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
 
@@ -51,7 +51,7 @@ const FeaturedWorkP = () => {
           {works.map((work, index) => (
             <div key={index} className="group">
               <div
-                className={`relative aspect-9/16 rounded-xl overflow-hidden bg-linear-to-br ${work.gradient}`}
+                className={`relative aspect-3/3 rounded-xl overflow-hidden bg-linear-to-br ${work.gradient}`}
               >
 
                 {/* {activeVideoIndex === index ? ( */}

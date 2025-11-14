@@ -25,7 +25,7 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section className="bg-[#1b1b1b] py-24 md:py-32 relative">
+    <section className="bg-black py-24 md:py-32 relative">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">

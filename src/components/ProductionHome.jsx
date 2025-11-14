@@ -21,7 +21,7 @@ const CursorGlow = () => {
   useEffect(() => {
     const glow = document.createElement("div");
     glow.className =
-      "fixed top-0 left-0 w-20 h-20 bg-[#e86b40]/20 rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-50";
+      "fixed top-0 left-0 w-20 h-20 bg-black rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-50";
     document.body.appendChild(glow);
 
     const handleMove = (e) => {
@@ -38,7 +38,7 @@ const CursorGlow = () => {
 
 const ProductionHome = () => {
   return (
-    <div className="bg-[#111] mt-[0.1px] pt-3">
+    <div className="bg-black text-[#f0ecd9] min-h-screen w-full overflow-x-hidden pt-3">
       {/* for glowing cursor */}
       <CursorGlow />
 
@@ -50,7 +50,7 @@ const ProductionHome = () => {
 
       {/* this is infinite text */}
       <CurvedLoop 
-  marqueeText="Chacha Chatore ✦ Productions ✦ Creative ✦ Camera ✦ Editing ✦ "
+  marqueeText="Chacha Chatore Productions ✦ Creative ✦ Camera ✦ Editing ✦ "
   speed={2}
   curveAmount={200}
   direction="left"
