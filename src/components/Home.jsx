@@ -61,9 +61,6 @@ const Home = () => {
           <img src="/images/lid.png" alt="" className="w-full h-full"/>
         </div>
           <img src="/images/Srk.png" alt="" />
-          <Link to='/production' className="absolute right-15 rotate-270 -top-15 md:-right-40 md:rotate-17 md:-top-15">
-        <h2 className="font-anton font-bold text-white uppercase text-2xl md:text-4xl mt-50">Chacha Chatore <br />Productions</h2>
-        </Link>
         </div>
         
       </div>

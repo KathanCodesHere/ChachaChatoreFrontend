@@ -2,10 +2,10 @@ import { Mail, Phone, Instagram } from "lucide-react";
 
 const CTA = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="contact" className="bg-black text-[#f0ecd9] py-24 md:py-32 min-h-screen flex flex-col items-center justify-center relative">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[#1b1b1b]"></div>
+        <div className="absolute inset-0 bg-black"></div>
         <div className="absolute inset-0 dots-pattern opacity-20"></div>
       </div>
       
@@ -13,9 +13,9 @@ const CTA = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Headline */}
           <div className="mb-12 animate-fade-in-up">
-            <h2 className="font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
+            <h2 className="font-anton uppercase text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
               Let's Cook
-              <span className="text-[#e86b40] block mt-2">Something Together</span>
+              <span className="text-[#e86b40] block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Something Together</span>
             </h2>
             
             <p className="text-md sm:text-lg md:text-2xl max-w-3xl mx-auto font-open text-[#f0ecd9]">

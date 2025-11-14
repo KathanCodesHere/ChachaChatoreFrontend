@@ -6,7 +6,7 @@ import { FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-scroll";
 const Footer = () => {
   return (
-    <footer className="bg-[#1b1b1b]  text-[#f0ecd9] py-12 px-6 md:px-16 border-t border-[#e86b40]/30">
+    <footer className="bg-black  text-[#f0ecd9] py-12 px-6 md:px-16 border-t border-[#e86b40]/30">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

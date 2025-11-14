@@ -6,7 +6,7 @@ import LightRays from '../reactbits/LightRays';
 
 const HeroProductions = () => {
   return (
-    <header className="relative min-h-[90vh] bg-[#1b1b1b] flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
+    <header className="relative min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
         <div style={{ width: '100%', height: '800px', position: 'absolute' }}>
                           <LightRays
                             raysOrigin="top-center"
