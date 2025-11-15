@@ -8,6 +8,7 @@ import CommunityCollaborations from './ChachaComponents/CommunityCollaborations'
 import CallToActionSection from './ChachaComponents/CallToActionSection'
 import Footer from './ChachaComponents/Footer'
 import AllTextsSection from './ChachaComponents/AllTextsSection'
+import ComingSoon from './ChachaComponents/comingsoon'
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
   useEffect(() => {
@@ -39,6 +40,7 @@ const ChachaChatoreHome = () => {
       <StorySection/>
       <FeaturedStories/>
       <CommunityCollaborations/>
+      <ComingSoon/>
       <CallToActionSection/>
       <Footer/>
     </div>

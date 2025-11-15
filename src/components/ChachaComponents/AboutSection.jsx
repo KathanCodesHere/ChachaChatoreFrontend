@@ -111,7 +111,7 @@ const AboutSection = () => {
           <h2 className="text-3xl sm:text-6xl font-alk font-bold text-[#FFFF00]  mb-6 uppercase tracking-wide">
            चाचा चटोरे
           </h2>
-          <p className="text-lg sm:text-2xl font-comic leading-relaxed mb-4 text-[#f0ecd9]/90">
+          <p className="text-lg sm:text-2xl md:text-2xl font-comic leading-relaxed mb-4 text-[#f0ecd9]/90">
             I’m not just a <span className="text-[#7DF9FF] font-semibold">food blogger</span>.
             I’m a storyteller — from <span className="text-[#7DF9FF] font-semibold">gali ke thelas</span>{" "}
             to five-star platters, I capture the soul of flavor.
