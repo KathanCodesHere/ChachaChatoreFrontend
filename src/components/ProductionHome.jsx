@@ -55,7 +55,7 @@ const ProductionHome = () => {
   curveAmount={200}
   direction="left"
   interactive={true}
-  className="custom-text-style text-[8rem] sm:text-5xl"
+  className=" text-[8rem] sm:text-5xl bg-black"
 />
 
     {/* this is another hero */}

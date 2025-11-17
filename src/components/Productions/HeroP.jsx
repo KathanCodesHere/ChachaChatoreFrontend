@@ -19,7 +19,7 @@ const HeroP = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black/90"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl px-6">
@@ -39,7 +39,7 @@ const HeroP = () => {
             className="
               group relative inline-flex items-center gap-3 
               px-10 py-4 text-xl font-semibold text-[#f0ecd9] rounded-xl
-              bg-gradient-to-r from-[#ff7a3d] to-[#ff501a] 
+              bg-linear-to-r from-[#ff7a3d] to-[#ff501a] 
               transition-all duration-300 
               hover:scale-110 hover:shadow-[0_0_35px_rgba(255,100,50,0.9)]
             "
