@@ -25,10 +25,9 @@ const HeroSection = () => {
         transition={{ duration: 1 }}
       >
         <GradientText
-  className="font-dyna font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight"
   colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-  animationSpeed={3}
-  showBorder={false}
+  animationSpeed={8}
+  showBorder={false} className="font-dyna font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight"
 >
   Kisse Kahaniyan with <br /> Chacha Ji
 </GradientText>
@@ -38,7 +37,8 @@ const HeroSection = () => {
         </h1> */}
 
         <p className="mt-6 text-lg sm:text-2xl text-[#f0ecd9]/90 font-comic font-bold">
-          Not just food videos. Not just vlogs. This is about people, plates,
+          Not just food videos. Not just vlogs. This 
+          is about people, plates,
           and the untold stories behind them.
         </p>
 
