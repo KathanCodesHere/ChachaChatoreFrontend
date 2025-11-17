@@ -46,11 +46,11 @@ const AllTextsSection = () => {
   />
 </div>
       <div className="other py-50 sm:py-50 ">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center gap-1">
             <h2 className="text-[#f0ecd9] text-4xl sm:text-8xl font-dyna font-semibold uppercase text-center tracking-wider">
-            Haan bhiyaa!!
+            Haan Bhiyaa!!
             </h2>
-            <div className="w-44 ">
+            <div className="w-20 sm:w-36 md:w-44 flex items-center">
                 <img src="https://i.pinimg.com/originals/5d/65/e0/5d65e0d64fdee50d84e9212e4d6785fd.gif" alt="" className="w-full h-full object-cover"/>
             </div>
             
