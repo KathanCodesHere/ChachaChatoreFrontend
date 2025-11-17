@@ -64,10 +64,7 @@ const AboutP = () => {
         </div>
 
         {/* Bottom Tagline */}
-        <div
-          className="border-2 border-[#e86b40] rounded-full px-8 py-4 mt-16 flex items-center justify-center 
-                      hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-colors duration-300 cursor-pointer active:scale-95"
-        >
+        <div className="border-2 border-[#e86b40] rounded-2xl px-6 py-3 sm:px-8 sm:py-4 mt-12 flex items-center justify-center hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-colors duration-300 cursor-pointer active:scale-95">
           <p className="text-center text-base md:text-lg font-open-sans"style={{ color:"#f0ecd9" }}>
             Think of us as your creative kitchen — where raw ideas become
             sizzling stories, ready to serve.
