@@ -67,7 +67,7 @@ const FeaturedStories = () => {
             viewport={{ once: true }}
             className="relative bg-[#1c1c1c] rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(232,107,64,0.15)] 
                        hover:shadow-[0_0_25px_rgba(232,107,64,0.4)] transition-all duration-500 
-                       w-60 sm:w-[260px] md:w-[280px] aspect-9/16 flex flex-col group cursor-pointer"
+                       w-[320px] sm:w-[280px] md:w-[290px] aspect-9/16 flex flex-col group cursor-pointer"
           >
             {/* Video */}
             <div className="relative flex-1 overflow-hidden">

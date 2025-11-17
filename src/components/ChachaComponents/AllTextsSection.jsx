@@ -48,7 +48,7 @@ const AllTextsSection = () => {
       <div className="other py-50 sm:py-50 ">
         <div className="flex items-center justify-center">
             <h2 className="text-[#f0ecd9] text-4xl sm:text-8xl font-dyna font-semibold uppercase text-center tracking-wider">
-            Haan Bhaiya!!
+            Haan bhiyaa!!
             </h2>
             <div className="w-44 ">
                 <img src="https://i.pinimg.com/originals/5d/65/e0/5d65e0d64fdee50d84e9212e4d6785fd.gif" alt="" className="w-full h-full object-cover"/>

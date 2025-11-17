@@ -7,7 +7,7 @@ export default function ComingSoon() {
 
       {/* Background Image */}
       <img
-        src="https://fastly.4sqi.net/img/general/600x600/10677843_Qm-6L0kpwuBt6wxEnRdNEEh2nlBSlML1JxDXPpj5IW0.jpg" 
+        src="https://static.vecteezy.com/system/resources/previews/023/809/530/large_2x/a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg" 
         alt=""
         className="absolute inset-0 w-full h-full object-cover opacity-30"
       />
@@ -15,7 +15,7 @@ export default function ComingSoon() {
       <div className="relative text-center px-4">
         
         <h3 className="text-[#f0ecd9] font-light tracking-[0.3em] mb-3 text-sm md:text-base">
-          FOOD COURT
+          FOOD CAST
         </h3>
 
         <motion.h1

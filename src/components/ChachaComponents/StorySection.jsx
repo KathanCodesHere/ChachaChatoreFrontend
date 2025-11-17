@@ -16,7 +16,7 @@ const storyPoints = [
   },
   {
     id: 3,
-    title: "Heart of India",
+    title: "Hindustan Ka Dil Dekho",
     desc: "Celebrating local culture with global relatability.",
     video: "https://www.youtube.com/watch?v=q_-vr4mO1xg",
   },
@@ -55,13 +55,12 @@ const StorySection = () => {
                 delay: index * 0.2,
               }}
               viewport={{ once: true, amount: 0.4 }}
-              className="relative flex flex-col items-center text-center w-full max-w-lg md:max-w-3xl"
-            >
+             className="relative flex flex-col items-center text-center w-full max-w-sm sm:max-w-md md:max-w-3xl px-2">
               {/* Connector Dot */}
               <div className="w-7 h-7 rounded-full bg-[#FF10F0] border-2 border-[#f0ecd9] shadow-[0_0_10px_#e86b40] mb-8" />
 
               {/* Text */}
-              <div className="bg-[#242424] p-8 mb-4 rounded-2xl shadow-lg w-full">
+              <div className="bg-[#242424] p-5 sm:p-6 md:p-8 mb-6 rounded-2xl shadow-lg w-full border border-[#FF10F0]/40">
                 <h3 className="text-2xl md:text-4xl font-medium font-dyna text-[#10ff24] mb-3">
                   {point.title}
                 </h3>
@@ -70,7 +69,7 @@ const StorySection = () => {
 
              {/* Rounded Square for YouTube Video */}
               <motion.div
-                className="w-64 h-50 md:w-80 md:h-64 rounded-2xl border-4 border-[#FF10F0] shadow-[0_0_15px_#e86b40] overflow-hidden mt-6"
+                className="w-72 h-56 md:w-80 md:h-60 md:w-96 md:h-72 rounded-2xl border-4 border-[#FF10F0] shadow-[0_0_15px_#e86b40] overflow-hidden mt-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}

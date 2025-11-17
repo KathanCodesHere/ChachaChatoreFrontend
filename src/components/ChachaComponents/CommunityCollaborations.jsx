@@ -13,19 +13,19 @@ const brands = [
 
 const CommunityCollaborations = () => {
   return (
-    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-20 px-0 overflow-hidden relative" id='comm'>
+    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-14 px-4 md:py-20 md:px-0 overflow-hidden relative" id='comm'>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="text-center mb-16 px-6 md:px-16"
+        className="text-center mb-10 px-6 md:px-16"
       >
         <h2 className="text-4xl md:text-6xl font-dyna font-medium text-[#FF007F] mb-4">
            Where Stories Meet People
         </h2>
-        <p className="text-lg md:text-xl font-comic font-bold text-[#f0ecd9]/90 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl font-comic font-bold text-[#f0ecd9]/90 max-w-3xl mx-auto">
           Chacha Chatore isn’t just me — it’s the community we’ve built. From food
           walks and tasting events to online collaborations with creators, the
           idea is always to celebrate food together.
@@ -46,7 +46,7 @@ const CommunityCollaborations = () => {
           {[...brands, ...brands,...brands, ...brands].map((brand, index) => (
             <div
               key={index}
-              className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full bg-[#242424] flex items-center justify-center p-4 shadow-lg border-[#FF007F] border-5"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 shrink-0 rounded-full bg-[#242424] flex items-center justify-center p-4 shadow-lg border-[#FF007F] border-5"
             >
               <img
                 src={brand.logo}
@@ -64,7 +64,7 @@ const CommunityCollaborations = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
-        className="mt-12 flex flex-wrap justify-center font-comic gap-6 "
+        className="mt-10 flex flex-wrap justify-center font-comic gap-4 sm:gap-6 "
       >
         <button className="bg-[#FF007F] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#bf0c66] transition-all duration-300">
           Join a Food Walk

@@ -38,7 +38,7 @@ const CursorGlow = () => {
 
 const ProductionHome = () => {
   return (
-    <div className="bg-black text-[#f0ecd9] min-h-screen w-full overflow-x-hidden pt-3">
+    <div className="bg-black py-1">
       {/* for glowing cursor */}
       <CursorGlow />
 
