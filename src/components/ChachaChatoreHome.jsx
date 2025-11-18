@@ -9,6 +9,7 @@ import CallToActionSection from './ChachaComponents/CallToActionSection'
 import Footer from './ChachaComponents/Footer'
 import AllTextsSection from './ChachaComponents/AllTextsSection'
 import ComingSoon from './ChachaComponents/comingsoon'
+import ChachaChatoreInfluencer from './ChachaChatoreInfluencer'
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
   useEffect(() => {
@@ -29,6 +30,10 @@ const CursorGlow = () => {
   return null;
 };
 const ChachaChatoreHome = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='bg-[#1b1b1b]  py-1'>
       {/* <NavBarc/> */}
@@ -41,6 +46,7 @@ const ChachaChatoreHome = () => {
       <FeaturedStories/>
       <CommunityCollaborations/>
       <ComingSoon/>
+      <ChachaChatoreInfluencer/>
       <CallToActionSection/>
       <Footer/>
     </div>

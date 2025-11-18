@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import GradientText from '../reactbits/GradientText'
 const HeroSection = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center px-0 mx-0">
       {/* 🔹 Background Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         src="https://www.pexels.com/download/video/2311965/" // ✅ Replace with your own hosted video file
         autoPlay
         loop
@@ -19,7 +19,7 @@ const HeroSection = () => {
 
       {/* 🔹 Text Content */}
       <motion.div
-        className="relative z-10 px-6 sm:px-12 text-[#f0ecd9] max-w-3xl"
+        className="relative z-10 px-4 sm:px-12 text-[#f0ecd9] max-w-3xl"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

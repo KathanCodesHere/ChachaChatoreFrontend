@@ -15,13 +15,15 @@ import HeroP from "./Productions/HeroP";
 //import Testimonials from "./Productions/Testimonials";
 import FeaturedWorkP from "./Productions/FeaturedWorkP";
 import NewTestimonial from "./Productions/NewTestimonial";
+import ExploreProductionHouse from "./ExploreProductionHouse";
+import LatestArticles from "./Productions/LatestArticles";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
   useEffect(() => {
     const glow = document.createElement("div");
     glow.className =
-      "fixed top-0 left-0 w-20 h-20 bg-black rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-50";
+      "fixed top-0 left-0 w-20 h-20 bg-[#e86b40] rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-50";
     document.body.appendChild(glow);
 
     const handleMove = (e) => {
@@ -37,6 +39,13 @@ const CursorGlow = () => {
 };
 
 const ProductionHome = () => {
+   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", 
+    });
+  }, []);
+
   return (
     <div className="bg-black py-1">
       {/* for glowing cursor */}
@@ -50,7 +59,7 @@ const ProductionHome = () => {
 
       {/* this is infinite text */}
       <CurvedLoop 
-  marqueeText="Chacha Chatore Productions ✦ Creative Agency ✦ Camera ✦ Editing ✦ "
+  marqueeText="✦lights ✦ camera ✦ action ✦ digital growth ✦ chacha chatore productions✦ storytelling ✦ creative agency "
   speed={2}
   curveAmount={200}
   direction="left"
@@ -73,11 +82,13 @@ const ProductionHome = () => {
 
       <WhyUs/>
 
-      <FeaturedWorkP/>  
+      <FeaturedWorkP/> 
+      <ExploreProductionHouse/>
       {/* Testimonials here */}
       {/*<Testimonials/> */}
       {/* NewTestimonials here */}
       <NewTestimonial/>
+      <LatestArticles/>
       {/* CTA SECTION */}
       <CTA/>
       <Footer/>
