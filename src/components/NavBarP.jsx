@@ -29,7 +29,7 @@ const NavBarP = () => {
   };
 
   return (
-    <nav className="backdrop-blur-md bg-[#1b1b1b]/90 text-[#fff5eb] sticky top-0 z-50 shadow-lg border border-[#2c2c2c]/70 mx-3 md:mx-8 mt-3 rounded-2xl overflow-hidden">
+    <nav className="backdrop-blur-md bg-[#1b1b1b]/90 text-[#fff5eb] sticky top-0 z-50 shadow-lg border border-[#2c2c2c]/70 mx-0 md:mx-0  rounded-none overflow-hidden">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 font-anton">
         {/* LOGO */}
         <Link
