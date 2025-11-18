@@ -50,7 +50,7 @@ const ProductionHome = () => {
 
       {/* this is infinite text */}
       <CurvedLoop 
-  marqueeText="Chacha Chatore Productions ✦ Creative ✦ Camera ✦ Editing ✦ "
+  marqueeText="Chacha Chatore Productions ✦ Creative Agency ✦ Camera ✦ Editing ✦ "
   speed={2}
   curveAmount={200}
   direction="left"
