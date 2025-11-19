@@ -52,9 +52,14 @@ const HeroSection = () => {
           >
             Watch Stories
           </a>
-          <button className="border border-[#f0ecd9] hover:bg-[#f0ecd9] hover:text-[#e86b40] px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 font-comic">
+          <a
+            href="https://www.youtube.com/@chachachatore"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-[#f0ecd9] hover:bg-[#f0ecd9] hover:text-[#e86b40] px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 font-comic"
+          >
             Follow the Journey
-          </button>
+          </a>
         </div>
       </motion.div>
     </section>

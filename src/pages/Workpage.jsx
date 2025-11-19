@@ -54,7 +54,7 @@ export default function WorksPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full min-h-screen bg-black text-[#f0ecd9] font-sans">
+    <div className="w-full min-h-screen bg-black text-[#f0ecd9] font-opensans">
 
       {/* Back Button */}
       <div className="px-6 md:px-12 py-6">
@@ -67,12 +67,12 @@ export default function WorksPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="w-full py-16 md:py-24 flex flex-col items-center justify-center text-center px-6 md:px-12">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-[#e86b40]">
-          Explore <span className="text-[#f0ecd9]">Our Work</span>
-        </h1>
+      <section className="w-full py-16 md:py-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
+        <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
+            <span className="text-[#e86b40]">explore </span>our work      
+        </h2>
 
-        <p className="text-lg md:text-xl max-w-2xl text-[#f0ecd9]/80">
+        <p className="font-opensans text-bold max-w-2xl text-[#f0ecd9]">
           A curated collection of creative stories, brand films, photography, and digital campaigns crafted by our agency.
         </p>
       </section>
@@ -92,14 +92,24 @@ export default function WorksPage() {
                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
             </div>
+            
 
             <div className="p-4 md:p-5">
-              <h3 className="text-xl font-bold text-[#e86b40]">
+              <h3 className="text-xl font-anton text-bold text-[#e86b40]">
                 {item.title}
               </h3>
             </div>
           </motion.div>
         ))}
+       {/* Back Button */}
+      <div className="mt-12 flex justify-center">
+        <button
+          onClick={() => navigate(-1)}
+          className="px-7 py-3 bg-[#e86b40] text-black rounded-full font-semibold font-opensans hover:bg-[#f0ecd9] hover:text-[#e86b40] transition-all"
+        >
+          ← Back 
+        </button>
+      </div>
       </section>
     </div>
   );

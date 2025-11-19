@@ -14,7 +14,7 @@ export default function ComingSoon() {
       {/* Content */}
       <div className="relative text-center px-4">
         
-        <h3 className="text-[#f0ecd9] font-light tracking-[0.3em] mb-3 text-sm md:text-base">
+        <h3 className="text-[#f0ecd9] font-dyna font-semibold tracking-[0.3em] mb-3 text-sm md:text-base">
           FOOD CAST
         </h3>
 
@@ -22,7 +22,7 @@ export default function ComingSoon() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-[#e86b40] text-4xl md:text-6xl font-bold tracking-[0.4em] mb-8"
+          className="text-[#e86b40] text-4xl md:text-6xl font-comic font-bold tracking-[0.4em] mb-8"
         >
           COMING SOON
         </motion.h1>

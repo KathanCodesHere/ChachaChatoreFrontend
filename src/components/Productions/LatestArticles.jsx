@@ -21,9 +21,8 @@ const LatestArticles = () => {
 
   return (
     <div className="w-full py-20 font-sans">
-
-      <h2 className="text-center text-5xl font-anton text-[#f0ecd9] mb-14">
-        LATEST<span className="text-[#e86b40]"> ARTICLES</span>
+      <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
+        <span className="text-[#e86b40]">Latest </span>articles
       </h2>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 px-6">
@@ -44,16 +43,16 @@ const LatestArticles = () => {
             </div>
 
             {/* Read More */}
-            <div className="mt-4 text-sm font-semibold text-[#e86b40] cursor-pointer">
+            <div className="mt-4 text-sm font-semibold font-opensans text-[#e86b40] cursor-pointer">
               READ MORE →
             </div>
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center mt-12">
-        <button className="bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full hover:bg-[#f0ecd9] hover:text-[#e86b40] transition duration-300">
-          VIEW ALL ARTICLES
+      <div className="flex justify-center mt-12 font-opensans font-bold">
+        <button className="bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full hover:bg-[#f0ecd9] hover:text-[#e86b40] transition duration-300 cursor-pointer">
+          View All Articles
         </button>
       </div>
     </div>
