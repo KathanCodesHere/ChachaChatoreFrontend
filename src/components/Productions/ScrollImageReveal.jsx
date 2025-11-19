@@ -57,7 +57,8 @@ const ScrollImageReveal = () => {
 
   return (
     <div className='bg-black text-[#f0ecd9] py-24 md:py-32 min-h-[400px]'>
-        <h2 className='text-[#e86b40] text-3xl  sm:text-5xl font-anton text-center mb-8'>On the Menu - Our Services</h2>
+        <h2 className='text-3xl  sm:text-5xl font-anton text-center mb-8'>
+        <span className='text-[#f0ecd9]'>On the Menu</span> <span className='text-[#e86b40]'>- Our Services</span></h2>
         {data.map((service,i)=>{
             return(
                 <div key={i} className="slider flex flex-col md:flex-row border-b border-white/25 p-3">

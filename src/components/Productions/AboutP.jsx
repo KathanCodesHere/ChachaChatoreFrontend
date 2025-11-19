@@ -12,7 +12,7 @@ const AboutP = () => {
           <div
             className="border-2 border-[#e86b40] rounded-xl p-6 flex flex-col justify-between 
                         transition-all duration-500 hover:-translate-y-2 
-                        hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] cursor-pointer active:scale-95"
+                        hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] active:scale-95"
           >
             <p className="font-open-sans text-sm leading-7"style={{ color:"#f0ecd9" }}>
               Born out of the same passion for storytelling, 
@@ -35,10 +35,10 @@ const AboutP = () => {
               font-anton 
               text-4xl md:text-6xl lg:text-7xl 
               text-[#e86b40] 
-              cursor-pointer
             "
           >
-            WHAT IS CHACHA CHATORE PRODUCTIONS?
+            <span className="text-[#f0ecd9]">WHAT IS</span> <br />
+            <span className="text-[#e86b40]">CHACHA CHATORE PRODUCTIONS?</span>
           </h2>
         </div>
 
@@ -46,7 +46,7 @@ const AboutP = () => {
           <div
             className="border-2 border-[#e86b40] rounded-xl p-6 flex flex-col justify-between 
                         transition-all duration-500 hover:-translate-y-2 
-                        hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] cursor-pointer active:scale-95"
+                        hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] active:scale-95"
           >
             <p className="font-open-sans text-sm leading-7"style={{ color:"#f0ecd9" }}>
               We blend the authenticity of street storytelling with polished
@@ -64,7 +64,7 @@ const AboutP = () => {
         </div>
 
         {/* Bottom Tagline */}
-        <div className="border-2 border-[#e86b40] rounded-2xl px-6 py-3 sm:px-8 sm:py-4 mt-12 flex items-center justify-center hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-colors duration-300 cursor-pointer active:scale-95">
+        <div className="border-2 border-[#e86b40] rounded-2xl px-6 py-3 sm:px-8 sm:py-4 mt-12 flex items-center justify-center hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-colors duration-300 active:scale-95">
           <p className="text-center text-base md:text-lg font-open-sans"style={{ color:"#f0ecd9" }}>
             Think of us as your creative kitchen — where raw ideas become
             sizzling stories, ready to serve.

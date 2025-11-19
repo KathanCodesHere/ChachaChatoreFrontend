@@ -21,23 +21,29 @@ const CallToActionSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6">
-            <motion.button
+            <motion.a
+              href="https://www.instagram.com/chachachatore/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 200 }}
               className="bg-[#A020F0] text-[#f0ecd9] font-comic  px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#7101b7] transition-all duration-300"
             >
               Watch Reels
-            </motion.button>
+            </motion.a>
 
-            <motion.button
+            <motion.a
+              href="mailto:Vineet.projection@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 200 }}
               className="border-2 font-comic border-[#A020F0] text-[#A020F0] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#A020F0] hover:text-[#f0ecd9] transition-all duration-300"
             >
               Contact Me
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 
