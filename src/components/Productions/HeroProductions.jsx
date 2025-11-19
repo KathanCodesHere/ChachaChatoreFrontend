@@ -1,18 +1,21 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCameraRetro, FaHamburger, FaLaugh, FaPlay } from "react-icons/fa";
 import LightRays from '../reactbits/LightRays';
 
+
+const MotionLink = motion(Link);
 const HeroProductions = () => {
   return (
     <header className="relative min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
-        <div style={{ width: '100%', height: '800px', position: 'absolute' }}>
+        <div className ="absolute inset-0 w-full h-full -z-10 pointer-events-none mix-blend-screen">
                           <LightRays
                             raysOrigin="top-center"
                             raysColor="#fff"
                             raysSpeed={1.1}
-                            lightSpread={0.4}
+                            lightSpread={0.15}
                             rayLength={3}
                             followMouse={true}
                             mouseInfluence={0.7}
@@ -82,14 +85,14 @@ const HeroProductions = () => {
               bringing Desi flavors to the digital world.
             </p>
 
-            <motion.a
-              href="#work"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-10 inline-flex items-center gap-3 bg-[#e86b40] text-[#111] px-6 py-3 rounded-md font-semibold uppercase shadow-md hover:shadow-[#e86b40]/60 transition-all"
-            >
-              <FaPlay /> Explore Our Work
-            </motion.a>
+            <MotionLink
+            to="/works"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-10 inline-flex items-center gap-3 bg-[#e86b40] text-[#111] px-6 py-3 rounded-md font-semibold uppercase shadow-md hover:shadow-[#e86b40]/60 transition-all"
+          >
+  <FaPlay /> Explore Our Work
+</MotionLink>
           </motion.div>
         </AnimatePresence>
       </header>

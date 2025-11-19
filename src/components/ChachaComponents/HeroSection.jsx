@@ -44,9 +44,14 @@ const HeroSection = () => {
 
         {/* 🔹 CTA Buttons */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
-          <button className="bg-[#e86b40] hover:bg-[#f0ecd9] hover:text-[#e86b40] text-[#f0ecd9] px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 font-comic">
+          <a
+            href="#stories"
+            className="bg-[#e86b40] hover:bg-[#f0ecd9] hover:text-[#e86b40] 
+                      text-[#f0ecd9] px-6 py-3 rounded-lg text-base sm:text-lg 
+                      font-semibold transition-all duration-300 font-comic inline-block"
+          >
             Watch Stories
-          </button>
+          </a>
           <button className="border border-[#f0ecd9] hover:bg-[#f0ecd9] hover:text-[#e86b40] px-6 py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 font-comic">
             Follow the Journey
           </button>

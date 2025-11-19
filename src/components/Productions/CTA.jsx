@@ -32,7 +32,7 @@ const CTA = () => {
               <Mail className="w-12 h-12 text-[#e86b40] mb-4 group-hover:scale-110 transition-transform" />
               <span className="font-anton text-[#f0ecd9] text-xl mb-2">Email karo </span>
               <span className="font-open text-sm text-muted-foreground">(Professional waala)</span>
-              <span className="font-open text-xs text-[#f0ecd9] mt-1">hello@chachachatore.com</span>
+              <span className="font-open text-xs text-[#f0ecd9] mt-1">Vineet.projection@gmail.com</span>
             </a>
             
             <a

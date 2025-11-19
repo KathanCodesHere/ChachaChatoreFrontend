@@ -22,8 +22,8 @@ const LatestArticles = () => {
   return (
     <div className="w-full py-20 font-sans">
 
-      <h2 className="text-center text-5xl font-anton text-[#e86b40] mb-14">
-        LATEST ARTICLES
+      <h2 className="text-center text-5xl font-anton text-[#f0ecd9] mb-14">
+        LATEST<span className="text-[#e86b40]"> ARTICLES</span>
       </h2>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 px-6">

@@ -45,7 +45,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-6 text-2xl">
           <motion.a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/chachachatore/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
@@ -65,7 +65,7 @@ const Footer = () => {
             <FaYoutube />
           </motion.a>
           <motion.a
-            href="mailto:chachachatore@gmail.com"
+            href="mailto:Vineet.projection@gmail.com"
             whileHover={{ scale: 1.2 }}
             transition={{ type: "spring", stiffness: 200 }}
             className="hover:text-[#e86b40] transition-colors"

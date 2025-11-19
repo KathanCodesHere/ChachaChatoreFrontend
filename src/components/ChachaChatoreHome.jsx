@@ -44,9 +44,9 @@ const ChachaChatoreHome = () => {
       <AboutSection/>
       <StorySection/>
       <FeaturedStories/>
+      <ChachaChatoreInfluencer/>
       <CommunityCollaborations/>
       <ComingSoon/>
-      <ChachaChatoreInfluencer/>
       <CallToActionSection/>
       <Footer/>
     </div>

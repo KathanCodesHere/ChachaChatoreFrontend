@@ -9,12 +9,24 @@ const NavBarP = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const navItems = [
-    { label: "Work", path: "stories" },
-    { label: "About", path: "about" },
-    { label: "Capabilities", path: "comm" },
-    { label: "Contact", path: "contact" },
-  ];
+ const isProduction = currentPath === "/production";
+
+const chachaNav = [
+  { label: "Work", path: "stories" },
+  { label: "About", path: "about" },
+  { label: "Capabilities", path: "comm" },
+  { label: "Contact", path: "contact" },
+];
+
+const productionNav = [
+  // { label: "Home", path: "home" },
+  { label: "Work", path: "work" },
+  { label: "Services", path: "services" },
+  { label: "Contact", path: "contact" },
+];
+
+const navItems = isProduction ? productionNav : chachaNav;
+
 
   // Scroll smoothly to section by id
   const handleScroll = (id) => {
