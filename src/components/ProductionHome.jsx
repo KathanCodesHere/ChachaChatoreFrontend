@@ -17,7 +17,7 @@ import FeaturedWorkP from "./Productions/FeaturedWorkP";
 import NewTestimonial from "./Productions/NewTestimonial";
 import ExploreProductionHouse from "./ExploreProductionHouse";
 import LatestArticles from "./Productions/LatestArticles";
-import Brands from "./Productions/brands";
+import Brands from "./Productions/Brands";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
