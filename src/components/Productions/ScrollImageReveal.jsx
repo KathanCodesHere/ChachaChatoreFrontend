@@ -56,7 +56,7 @@ const ScrollImageReveal = () => {
     })
 
   return (
-    <div className='bg-black text-[#f0ecd9] py-24 md:py-32 min-h-[400px]'>
+    <div id='services' className='bg-black text-[#f0ecd9] py-24 md:py-32 min-h-[400px]'>
         <h2 className='text-3xl  sm:text-5xl font-anton text-center mb-8'>
         <span className='text-[#f0ecd9]'>On the Menu</span> <span className='text-[#e86b40]'>- Our Services</span></h2>
         {data.map((service,i)=>{

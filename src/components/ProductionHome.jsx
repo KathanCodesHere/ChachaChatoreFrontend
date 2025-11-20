@@ -18,6 +18,7 @@ import NewTestimonial from "./Productions/NewTestimonial";
 import ExploreProductionHouse from "./ExploreProductionHouse";
 import LatestArticles from "./Productions/LatestArticles";
 import Brands from "./Productions/Brands";
+import ScrollToTop from "./ScrollToTop";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
@@ -50,6 +51,7 @@ const ProductionHome = () => {
   return (
     <div className="bg-black py-1">
       {/* for glowing cursor */}
+      <ScrollToTop/>
       <CursorGlow />
 
       {/* this is the navbar */}

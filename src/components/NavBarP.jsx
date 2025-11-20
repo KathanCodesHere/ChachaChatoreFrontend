@@ -19,7 +19,7 @@ const chachaNav = [
 ];
 
 const productionNav = [
-  // { label: "Home", path: "home" },
+  { label: "Home", path: "home" },
   { label: "Work", path: "work" },
   { label: "Services", path: "services" },
   { label: "Contact", path: "contact" },

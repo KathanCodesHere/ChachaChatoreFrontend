@@ -23,17 +23,14 @@ export default function WorkWithChacha() {
   const [selectedTypes, setSelectedTypes] = useState([]);
 
   const toggleType = (type) => {
-    if (selectedTypes.includes(type)) {
-      setSelectedTypes(selectedTypes.filter((t) => t !== type));
-    } else {
-      setSelectedTypes([...selectedTypes, type]);
-    }
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
   };
 
   const filteredJobs = allJobs.filter((job) => {
     let matchFilter = true;
     if (filter === "Remote") matchFilter = job.location.toLowerCase().includes("remote");
-    if (filter === "Department") matchFilter = true;
 
     if (selectedTypes.length > 0) {
       return matchFilter && selectedTypes.includes(job.type);
@@ -47,34 +44,46 @@ export default function WorkWithChacha() {
     <div className="w-full bg-black text-[#f0ecd9] py-16 px-6 md:px-20 flex flex-col min-h-screen">
 
       {/* Page Title */}
-      <div className="flex flex-col gap-2 mb-10">
-        <span className="px-4 py-1 border rounded-full text-sm w-fit border-[#e86b40] text-[#e86b40]">Careers</span>
-        <h1 className="text-4xl md:text-6xl font-semibold text-[#e86b40]">Work With Chacha Chatore</h1>
+      <div className="flex flex-col items-center text-center gap-2 mb-14">
+        {/* <span className="px-4 py-1 border rounded-full text-sm border-[#e86b40] text-[#e86b40] font-open">
+          Careers
+        </span> */}
+        <h1 className="text-4xl md:text-6xl font-anton text-[#f0ecd9] leading-tight">
+          Work With <span className="text-[#e86b40]">Chacha Chatore</span>
+        </h1>
       </div>
 
       {/* Perks Section */}
-      <h2 className="text-3xl md:text-5xl font-semibold text-center text-[#e86b40] mb-12">Our Perks & Benefits</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-        {perks.map((p, index) => (
-          <div key={index} className="flex gap-4 items-start bg-[#1a1a1a] p-6 rounded-xl hover:shadow-lg transition">
+      <h2 className="text-3xl md:text-5xl font-anton text-[#f0ecd9] mb-10">
+        Our Perks <span className="text-[#e86b40]">& Benefits</span>
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        {perks.map((p, i) => (
+          <div
+            key={i}
+            className="flex gap-4 items-start bg-[#1a1a1a] p-6 rounded-2xl border border-[#2b2b2b] hover:border-[#e86b40] transition-all"
+          >
             <div className="text-4xl">{p.icon}</div>
             <div>
-              <h3 className="text-xl font-semibold mb-1 text-[#f0ecd9]">{p.title}</h3>
-              <p className="text-sm opacity-80">{p.desc}</p>
+              <h3 className="text-xl font-bold font-open text-[#f0ecd9]">{p.title}</h3>
+              <p className="text-sm opacity-80 font-open">{p.desc}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Filter Buttons */}
-      <div className="flex items-center justify-between flex-wrap gap-4 mb-10 relative">
+      <div className="flex items-center justify-between flex-wrap gap-4 mb-12 relative">
         <div className="flex gap-3 flex-wrap">
           {["All Roles", "Remote", "Department"].map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-5 py-2 rounded-full text-sm ${
-                filter === f ? "bg-[#e86b40] text-black" : "border border-[#e86b40] text-[#e86b40]"
+              className={`px-5 py-2 rounded-full text-sm font-open transition-all ${
+                filter === f
+                  ? "bg-[#e86b40] text-black font-semibold"
+                  : "border border-[#e86b40] text-[#e86b40]"
               }`}
             >
               {f}
@@ -86,15 +95,15 @@ export default function WorkWithChacha() {
         <div className="relative">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-1 px-5 py-2 rounded-full border border-[#e86b40] text-[#e86b40] text-sm"
+            className="flex items-center gap-1 px-5 py-2 rounded-full border border-[#e86b40] text-[#e86b40] text-sm font-open"
           >
             Filter by <ChevronDown size={16} />
           </button>
 
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 bg-[#1a1a1a] border border-[#e86b40] rounded-lg p-4 flex flex-col gap-2 z-50">
+            <div className="absolute right-0 mt-2 bg-[#1a1a1a] border border-[#e86b40] rounded-lg p-4 flex flex-col gap-2 z-50 shadow-lg">
               {jobTypes.map((type) => (
-                <label key={type} className="flex items-center gap-2 cursor-pointer">
+                <label key={type} className="flex items-center gap-2 cursor-pointer font-open">
                   <input
                     type="checkbox"
                     checked={selectedTypes.includes(type)}
@@ -114,27 +123,31 @@ export default function WorkWithChacha() {
         {filteredJobs.map((job, index) => (
           <div
             key={index}
-            className="flex justify-between items-center w-full border border-[#e86b40] rounded-xl px-6 py-4 hover:shadow-lg transition bg-[#1a1a1a]"
+            className="flex flex-col md:flex-row justify-between md:items-center max-w-2xl border border-[#e86b40] rounded-2xl px-6 py-5 hover:bg-[#111] transition-all bg-[#1a1a1a]"
           >
-            <h3 className="text-lg font-medium text-[#f0ecd9]">{job.title}</h3>
-            <div className="flex gap-10 text-sm opacity-70">
+            <h3 className="text-lg md:text-xl font-opensans font-semibold text-[#f0ecd9]">
+              {job.title}
+            </h3>
+
+            <div className="flex gap-6 text-sm opacity-70 font-opensans mt-2 md:mt-0">
               <span>{job.type}</span>
               <span>{job.location}</span>
             </div>
           </div>
         ))}
+
         {filteredJobs.length === 0 && (
-          <p className="text-center text-sm opacity-60 mt-4">No jobs found for this filter.</p>
+          <p className="text-center text-sm opacity-60 mt-4 font-opensans">No jobs found.</p>
         )}
       </div>
 
-      {/* Back Button at the bottom */}
-      <div className="mt-10 flex justify-center">
+      {/* Back Button */}
+      <div className="mt-12 flex justify-center">
         <button
           onClick={() => navigate(-1)}
-          className="px-6 py-3 bg-[#e86b40] text-black rounded-full font-semibold hover:bg-[#f0ecd9] hover:text-[#e86b40] transition"
+          className="px-7 py-3 bg-[#e86b40] text-black rounded-full font-semibold font-opensans hover:bg-[#f0ecd9] hover:text-[#e86b40] transition-all"
         >
-          &larr; Back
+          ← Back
         </button>
       </div>
     </div>

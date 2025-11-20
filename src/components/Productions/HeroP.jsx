@@ -23,7 +23,7 @@ const HeroP = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl px-6">
-        <h1 className="font-bold text-[4rem] md:text-[6rem] uppercase leading-none font-anton cursor-pointer">
+        <h1 className="font-bold text-[4rem] md:text-[6rem] uppercase leading-none font-anton">
         <span className="text-[#f0ecd9]">Stories With</span>{" "}<br></br>
         <span className="text-[#e86b40]">Tandoori Tadka</span>  
         </h1>

@@ -10,6 +10,7 @@ import Footer from './ChachaComponents/Footer'
 import AllTextsSection from './ChachaComponents/AllTextsSection'
 import ComingSoon from './ChachaComponents/comingsoon'
 import ChachaChatoreInfluencer from './ChachaChatoreInfluencer'
+import ScrollToTop from './ScrollToTop'
 // 🔥 Adds a glowing cursor trail that follows the mouse
 const CursorGlow = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const ChachaChatoreHome = () => {
   return (
     <div className='bg-[#1b1b1b]  py-1'>
       {/* <NavBarc/> */}
+      <ScrollToTop/>
       <CursorGlow />
       <NavBarP/>
       <HeroSection/>

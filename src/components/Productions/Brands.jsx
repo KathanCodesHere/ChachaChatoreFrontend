@@ -11,7 +11,7 @@ const brands = [
   { id: 6, logo: "https://res.cloudinary.com/vistaprint/images/c_scale,w_1048,h_342,dpr_1.25/f_auto,q_auto/v1706089184/ideas-and-advice-prod/en-us/Coca-Cola_logo.svg_/Coca-Cola_logo.svg_.png?_i=AA" },
 ];
 
-const ClientsWorkedWith = () => {
+const Brands = () => {
   return (
     <section className="bg-black text-[#f0ecd9] py-14 px-0 md:py-20 overflow-hidden relative w-full" id='comm'>
       {/* Headline */}
@@ -21,11 +21,11 @@ const ClientsWorkedWith = () => {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
         className="text-center mb-10 px-6 md:px-16"
-      >
-        <h2 className="text-4xl md:text-6xl font-dyna font-medium text-[#e86b40] mb-4">
-           Where Stories Meet People
-        </h2>
-        <p className="text-base sm:text-lg md:text-xl font-comic font-bold text-[#f0ecd9]/90 max-w-3xl mx-auto">
+      >  
+        <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
+            <span className="text-[#e86b40]">Brands We’ve  </span> Worked With
+          </h2>
+        <p className="text-base sm:text-lg md:text-xl font-opensans font-semibold text-[#f0ecd9] max-w-3xl mx-auto">
           Chacha Chatore isn’t just me — it’s the community we’ve built. From food
           walks and tasting events to online collaborations with creators, the
           idea is always to celebrate food together.
@@ -64,24 +64,17 @@ const ClientsWorkedWith = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
-        className="mt-10 flex flex-wrap justify-center font-comic gap-4 sm:gap-6 "
+        className="mt-10 flex flex-wrap justify-center font-opensans gap-4 sm:gap-6 "
       >
         <a
-          href="#contact"
-          className="bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full text-lg font-bold hover:bg-white hover:text-[#e86b40] transition-all duration-300 inline-block"
-        >
-          Join a Food Walk
-        </a>
-
-        <a
-          href="#contact"
-          className="border-2 border-[#e86b40] text-[#e86b40] px-8 py-3 rounded-full text-lg font-bold hover:bg-[#e86b40] hover:text-[#f0ecd9] transition-all duration-300 inline-block"
-        >
-          Partner with Me
-        </a>
+            href="#contact"
+            className="bg-[#e86b40] text-[#f0ecd9] px-8 py-3 rounded-full font-bold hover:bg-white hover:text-[#e86b40] transition-all duration-300 inline-block"
+            >
+            Partner with me
+            </a>
       </motion.div>
     </section>
   );
 };
 
-export default ClientsWorkedWith;
+export default Brands;
