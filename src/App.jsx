@@ -9,9 +9,11 @@ import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import WorksPage from './pages/Workpage'
 import WorkWithChacha from './pages/WorkWithChacha'
+import ScrollToTop from './components/ScrollToTop'
 const App = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
     <Loader/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>

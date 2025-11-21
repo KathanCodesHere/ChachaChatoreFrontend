@@ -21,24 +21,24 @@ import Brands from "./Productions/Brands";
 import ScrollToTop from "./ScrollToTop";
 
 // 🔥 Adds a glowing cursor trail that follows the mouse
-const CursorGlow = () => {
-  useEffect(() => {
-    const glow = document.createElement("div");
-    glow.className =
-      "fixed top-0 left-0 w-20 h-20 bg-[#e86b40] rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-50";
-    document.body.appendChild(glow);
+// const CursorGlow = () => {
+//   useEffect(() => {
+//     const glow = document.createElement("div");
+//     glow.className =
+//       "fixed top-0 left-0 w-20 h-20 bg-[#e86b40] rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-50";
+//     document.body.appendChild(glow);
 
-    const handleMove = (e) => {
-      glow.style.transform = `translate(${e.clientX - 40}px, ${
-        e.clientY - 40
-      }px)`;
-    };
+//     const handleMove = (e) => {
+//       glow.style.transform = `translate(${e.clientX - 40}px, ${
+//         e.clientY - 40
+//       }px)`;
+//     };
 
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
-  return null;
-};
+//     window.addEventListener("mousemove", handleMove);
+//     return () => window.removeEventListener("mousemove", handleMove);
+//   }, []);
+//   return null;
+// };
 
 const ProductionHome = () => {
    useEffect(() => {
@@ -52,7 +52,7 @@ const ProductionHome = () => {
     <div className="bg-black py-1">
       {/* for glowing cursor */}
       <ScrollToTop/>
-      <CursorGlow />
+      {/* <CursorGlow /> */}
 
       {/* this is the navbar */}
       <NavBarP />

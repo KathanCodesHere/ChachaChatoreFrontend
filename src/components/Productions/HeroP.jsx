@@ -35,7 +35,7 @@ const HeroP = () => {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-6">
        <a href="#work" 
-       className="
+       className=" 
           group relative inline-flex items-center gap-3 
           px-10 py-4 text-xl font-semibold text-[#f0ecd9] rounded-xl
           bg-gradient-to-r from-[#ff7a3d] to-[#ff501a] 

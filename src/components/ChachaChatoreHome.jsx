@@ -39,7 +39,7 @@ const ChachaChatoreHome = () => {
     <div className='bg-[#1b1b1b]  py-1'>
       {/* <NavBarc/> */}
       <ScrollToTop/>
-      <CursorGlow />
+      {/* <CursorGlow /> */}
       <NavBarP/>
       <HeroSection/>
       <AllTextsSection/>

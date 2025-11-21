@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -43,15 +43,19 @@ const works = [
     title: "Social Media Rebranding",
     image: "https://images.unsplash.com/photo-1522199710521-72d69614c702",
   },
-  {
-    id: 9,
-    title: "Social Media Rebranding",
-    image: "https://images.unsplash.com/photo-1522199710521-72d69614c702",
-  },
 ];
 
 export default function WorksPage() {
   const navigate = useNavigate();
+
+  // ⭐ FIX: Refresh par hamesha top par le aayega
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, []);
 
   return (
     <div className="w-full min-h-screen bg-black text-[#f0ecd9] font-opensans">
@@ -62,17 +66,17 @@ export default function WorksPage() {
           onClick={() => navigate(-1)}
           className="px-5 py-2 bg-[#e86b40] text-black rounded-full font-semibold hover:bg-[#f0ecd9] hover:text-[#e86b40] transition"
         >
-          &larr; Back
+          ← Back
         </button>
       </div>
 
       {/* Hero Section */}
-      <section className="w-full py-16 md:py-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
-        <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
-            <span className="text-[#e86b40]">explore </span>our work      
+      <section className="w-full pt-6 pb-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
+        <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-4">
+          <span className="text-[#e86b40]">explore </span>our work
         </h2>
 
-        <p className="font-opensans text-bold max-w-2xl text-[#f0ecd9]">
+        <p className="font-opensans max-w-2xl text-[#f0ecd9]/90">
           A curated collection of creative stories, brand films, photography, and digital campaigns crafted by our agency.
         </p>
       </section>
@@ -92,7 +96,6 @@ export default function WorksPage() {
                 className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
             </div>
-            
 
             <div className="p-4 md:p-5">
               <h3 className="text-xl font-anton text-bold text-[#e86b40]">
@@ -101,15 +104,16 @@ export default function WorksPage() {
             </div>
           </motion.div>
         ))}
-       {/* Back Button */}
-      <div className="mt-12 flex justify-center">
-        <button
-          onClick={() => navigate(-1)}
-          className="px-7 py-3 bg-[#e86b40] text-black rounded-full font-semibold font-opensans hover:bg-[#f0ecd9] hover:text-[#e86b40] transition-all"
-        >
-          ← Back 
-        </button>
-      </div>
+
+        {/* Back Button */}
+        <div className="mt-12 flex justify-center col-span-full">
+          <button
+            onClick={() => navigate(-1)}
+            className="px-7 py-3 bg-[#e86b40] text-black rounded-full font-semibold font-opensans hover:bg-[#f0ecd9] hover:text-[#e86b40] transition-all"
+          >
+            ← Back
+          </button>
+        </div>
       </section>
     </div>
   );

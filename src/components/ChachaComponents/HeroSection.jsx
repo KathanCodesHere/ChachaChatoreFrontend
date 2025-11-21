@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import GradientText from '../reactbits/GradientText'
 const HeroSection = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center px-0 mx-0">
+    <section id="hero"
+    className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center px-0 mx-0">
       {/* 🔹 Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover object-center"

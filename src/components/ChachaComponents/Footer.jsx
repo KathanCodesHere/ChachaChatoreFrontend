@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Quick Links */}
         <div className="flex flex-wrap justify-center gap-6 text-2xl font-bold font-comic">
           <Link
-            to="/"
+            to="herop"
             className="hover:text-[#e86b40] hover:cursor-pointer transition-colors duration-300"
           >
             Home
@@ -29,13 +29,13 @@ const Footer = () => {
             Stories
           </Link>
           <Link
-            to="collaborations"
+            to="comm"
             className="hover:text-[#e86b40] hover:cursor-pointer transition-colors duration-300"
           >
             Collaborations
           </Link>
           <Link
-            to="contact"
+            to="contact"  
             className="hover:text-[#e86b40] hover:cursor-pointer transition-colors duration-300"
           >
             Contact
@@ -55,7 +55,7 @@ const Footer = () => {
             <FaInstagram />
           </motion.a>
           <motion.a
-            href="https://www.youtube.com/"
+            href="https://www.youtube.com/@chachachatore"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}

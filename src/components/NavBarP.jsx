@@ -12,33 +12,40 @@ const NavBarP = () => {
  const isProduction = currentPath === "/production";
 
 const chachaNav = [
-  { label: "Work", path: "stories" },
-  { label: "About", path: "about" },
-  { label: "Capabilities", path: "comm" },
-  { label: "Contact", path: "contact" },
+  { label: "Home", path: "hero" },
+  { label: "About Us", path: "about" },
+  { label: "Contact Us", path: "contact" },
 ];
 
 const productionNav = [
-  { label: "Home", path: "home" },
-  { label: "Work", path: "work" },
-  { label: "Services", path: "services" },
-  { label: "Contact", path: "contact" },
+  { label: "Home", path: "herop" },
+  { label: "About Us", path: "aboutp" },
+  { label: "Gallary", path: "stories" },
+  { label: "Contact US", path: "contact" },
+  { label: " Brands associated", path: "comm" },
 ];
 
 const navItems = isProduction ? productionNav : chachaNav;
 
 
-  // Scroll smoothly to section by id
-  const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -100; // adjust for navbar height
-      const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+// Scroll smoothly to section by id
+const handleScroll = (id) => {
+  const section = document.getElementById(id);
+  const navbar = document.querySelector(".navbar");
 
-      window.scrollTo({ top: yPosition, behavior: "smooth" });
-      setMenuOpen(false);
-    }
-  };
+  if (section) {
+    const navHeight = navbar ? navbar.offsetHeight : 0; // dynamic height
+    const yPosition =
+      section.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({
+      top: yPosition,
+      behavior: "smooth",
+    });
+
+    setMenuOpen(false);
+  }
+};
+
 
   return (
     <nav className="backdrop-blur-md bg-[#1b1b1b]/90 text-[#fff5eb] sticky top-0 z-50 shadow-lg border border-[#2c2c2c]/70 mx-0 md:mx-0  rounded-none overflow-hidden">
