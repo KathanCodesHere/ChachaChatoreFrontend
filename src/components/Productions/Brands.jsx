@@ -13,7 +13,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <section className="bg-black text-[#f0ecd9] py-14 px-0 md:py-20 overflow-hidden relative w-full" id='comm'>
+    <section className="bg-black text-[#f0ecd9] py-14 md:py-30 pt-32 relative overflow-hidden w-full" id='comm'>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -26,9 +26,9 @@ const Brands = () => {
             <span className="text-[#e86b40]">Brands We’ve  </span> Worked With
           </h2>
         <p className="text-base sm:text-lg md:text-xl font-opensans font-semibold text-[#f0ecd9] max-w-3xl mx-auto">
-          Chacha Chatore isn’t just me — it’s the community we’ve built. From food
-          walks and tasting events to online collaborations with creators, the
-          idea is always to celebrate food together.
+         Trusted by leading brands for delivering high-quality, impactful video content. 
+         Our creative team ensures every project is crafted with precision, 
+         passion, and reliability, helping brands communicate their stories with excellence.
         </p>
       </motion.div>
 

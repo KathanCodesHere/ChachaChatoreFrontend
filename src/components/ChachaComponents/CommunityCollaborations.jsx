@@ -13,7 +13,7 @@ const brands = [
 
 const CommunityCollaborations = () => {
   return (
-    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-14 px-0 md:py-20 overflow-hidden relative w-full" id='comm'>
+    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-14 md:py-30 pt-32 relative overflow-hidden w-full" id='comm'>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}

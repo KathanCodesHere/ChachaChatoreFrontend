@@ -9,8 +9,8 @@ import LightRays from '../reactbits/LightRays';
 const MotionLink = motion(Link);
 const HeroProductions = () => {
   return (
-    <header className="relative min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
-        <div className ="absolute inset-0 w-full h-full -z-10 pointer-events-none mix-blend-screen">
+    <header id="herop" className="relative min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden text-[#f0ecd9]">
+        <div className ="absolute inset-0 w-full h-full pointer-events-none mix-blend-screen">
                           <LightRays
                             raysOrigin="top-center"
                             raysColor="#fff"

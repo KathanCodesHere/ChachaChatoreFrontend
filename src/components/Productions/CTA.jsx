@@ -60,9 +60,9 @@ const CTA = () => {
           
           {/* Primary CTA Button */}
           <div className="animate-fade-in animation-delay-400">
-            <button className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-[#f0ecd9] border-white border">
+            <a href="#work" className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-[#f0ecd9] border-white border">
               See Our Work
-            </button>
+            </a>
           </div>
           
           {/* Tagline */}

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const ChachaChatoreInfluencer = () => {
   return (
-    <div className="w-full h-[35vh] flex flex-col items-center justify-center text-center px-6">
+    <div className="w-full h-[40vh] flex flex-col items-center justify-center text-center px-6">
       
-      <h2 className="text-4xl font-dyna font-bold text-[#e86b40] mb-3 tracking-wide">
+      <h2 className="text-4xl font-dyna font-semibold text-[#e86b40] mb-3 tracking-wide">
          Your Story. Our Production. Unlimited Growth.
       </h2>
 

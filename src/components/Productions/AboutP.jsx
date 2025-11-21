@@ -2,7 +2,8 @@ import React from "react";
 
 const AboutP = () => {
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 py-16">
+    <div id="aboutp"
+    className="min-h-screen bg-black text-white flex items-center justify-center px-6 py-16">
     <div className="w-full max-w-6xl p-10">
         
         {/* Top Section */}
