@@ -1,135 +1,185 @@
 import React, { useState } from "react";
 
+// ---- INITIAL STORIES (same as main site) ----
+const initialStories = [
+  {
+    id: 1,
+    title: "Indore’s Best Poha-Jalebi Morning",
+    desc: "A delicious morning story from the streets of Indore.",
+    videoUrl: "https://www.youtube-nocookie.com/embed/YQ8C7KWDlTY?si=fmYw6eRgZyA2Mxde",
+  },
+  {
+    id: 2,
+    title: "Street Food Tales from Sarafa Bazaar",
+    desc: "Where flavors, lights, and laughter never sleep.",
+    videoUrl: "https://www.youtube-nocookie.com/embed/YQ8C7KWDlTY?si=fmYw6eRgZyA2Mxde",
+  },
+  {
+    id: 3,
+    title: "Delhi’s Chaat Magic",
+    desc: "Exploring spicy, tangy, and sweet street wonders of Delhi.",
+    videoUrl: "https://www.youtube-nocookie.com/embed/jfKfPfyJRdk",
+  },
+  {
+    id: 4,
+    title: "Mumbai’s Rainy Vada Pav Trail",
+    desc: "Because nothing beats chai and vada pav in the rain.",
+    videoUrl: "https://www.youtube-nocookie.com/embed/jfKfPfyJRdk",
+  },
+];
+
 const FeaturedStoriesAdmin = () => {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [videoUrl, setVideoUrl] = useState("");
-  const [stories, setStories] = useState([]);
-  const [editingId, setEditingId] = useState(null);
+  const [stories, setStories] = useState(initialStories);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [editingStory, setEditingStory] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // temp form state
+  const [form, setForm] = useState({
+    title: "",
+    desc: "",
+    videoUrl: "",
+  });
 
-    if (editingId) {
-      const updated = stories.map((story) =>
-        story.id === editingId
-          ? { ...story, title, desc, videoUrl }
-          : story
+  // open add modal
+  const openAddModal = () => {
+    setEditingStory(null);
+    setForm({ title: "", desc: "", videoUrl: "" });
+    setModalOpen(true);
+  };
+
+  // open edit modal
+  const openEditModal = (story) => {
+    setEditingStory(story);
+    setForm({
+      title: story.title,
+      desc: story.desc,
+      videoUrl: story.videoUrl,
+    });
+    setModalOpen(true);
+  };
+
+  // save story
+  const saveStory = () => {
+    if (editingStory) {
+      // UPDATE
+      setStories(
+        stories.map((s) =>
+          s.id === editingStory.id ? { ...editingStory, ...form } : s
+        )
       );
-      setStories(updated);
-      alert("Story Updated Successfully!");
-      setEditingId(null);
-      setTitle("");
-      setDesc("");
-      setVideoUrl("");
-      return;
+    } else {
+      // ADD NEW
+      const newStory = {
+        id: Date.now(),
+        ...form,
+      };
+      setStories([...stories, newStory]);
     }
 
-    const newStory = {
-      id: Date.now(),
-      title,
-      desc,
-      videoUrl,
-    };
-    setStories([...stories, newStory]);
-    alert("Story Added Successfully!");
-    setTitle("");
-    setDesc("");
-    setVideoUrl("");
+    setModalOpen(false);
   };
 
-  const handleDelete = (id) => {
-    const updated = stories.filter((story) => story.id !== id);
-    setStories(updated);
-  };
-
-  const handleEdit = (story) => {
-    setEditingId(story.id);
-    setTitle(story.title);
-    setDesc(story.desc);
-    setVideoUrl(story.videoUrl);
+  // delete
+  const deleteStory = (id) => {
+    setStories(stories.filter((s) => s.id !== id));
   };
 
   return (
-    <div className="p-5 bg-[#242424] rounded-xl shadow-lg text-[#F0ECD9]">
-      <h2 className="text-2xl font-bold text-[#E86B40] mb-4">
-        {editingId ? "Edit Featured Story" : "Add Featured Story"}
-      </h2>
+    <div className="p-6 text-white">
 
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input
-          type="text"
-          placeholder="Enter title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="bg-[#1b1b1b] px-3 py-2 rounded-lg outline-none text-[#F0ECD9] placeholder-[#b8b4a7]"
-        />
-        <input
-          type="text"
-          placeholder="Enter description"
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
-          className="bg-[#1b1b1b] px-3 py-2 rounded-lg outline-none text-[#F0ECD9] placeholder-[#b8b4a7]"
-        />
-        <input
-          type="text"
-          placeholder="Enter video URL"
-          value={videoUrl}
-          onChange={(e) => setVideoUrl(e.target.value)}
-          className="bg-[#1b1b1b] px-3 py-2 rounded-lg outline-none text-[#F0ECD9] placeholder-[#b8b4a7]"
-        />
+      {/* HEADER */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold text-[#E86B40]">Featured Stories Admin</h2>
         <button
-          type="submit"
-          className="bg-[#E86B40] text-[#1b1b1b] py-2 px-4 rounded-lg font-semibold hover:bg-[#c75a33] transition-all self-start"
+          onClick={openAddModal}
+          className="bg-[#E86B40] px-4 py-2 rounded-lg font-semibold"
         >
-          {editingId ? "Update Story" : "Add Story"}
+          + Add New Story
         </button>
-      </form>
-
-      {/* List of Stories */}
-      <div className="mt-6">
-        <h3 className="text-xl font-semibold text-[#E86B40] mb-2">
-          Added Stories
-        </h3>
-
-        {stories.length === 0 ? (
-          <p className="text-sm text-[#b8b4a7]">No stories added yet.</p>
-        ) : (
-          <div className="flex flex-col gap-4">
-            {stories.map((story) => (
-              <div
-                key={story.id}
-                className="bg-[#1b1b1b] p-4 rounded-lg border border-[#333] flex flex-col"
-              >
-                {/* Story Info */}
-                <div className="flex-1">
-                  <h4 className="text-lg font-bold text-[#F0ECD9]">{story.title}</h4>
-                  <p className="text-sm text-[#d9d4c4] mt-1">{story.desc}</p>
-                  <p className="text-sm font-semibold text-[#E86B40] mt-1">{story.videoUrl}</p>
-                </div>
-
-                {/* Buttons Below */}
-                <div className="flex gap-3 mt-4">
-                  <button
-                    onClick={() => handleEdit(story)}
-                    className="bg-[#E86B40] text-[#1b1b1b] py-2 px-4 rounded-lg font-semibold hover:bg-[#c75a33] transition-all"
-                  >
-                    Edit
-                  </button>
-
-                  <button
-                    onClick={() => handleDelete(story.id)}
-                    className="bg-red-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-600 transition-all"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
+
+      {/* LIST */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {stories.map((story) => (
+          <div
+            key={story.id}
+            className="bg-[#242424] p-4 rounded-xl border border-[#333]"
+          >
+            <h3 className="text-xl font-bold text-[#00BFFF]">{story.title}</h3>
+            <p className="text-sm text-gray-300 mt-1">{story.desc}</p>
+
+            <iframe
+              src={story.videoUrl}
+              className="w-full h-40 mt-3 rounded-lg"
+            ></iframe>
+
+            <div className="flex gap-3 mt-4">
+              <button
+                onClick={() => openEditModal(story)}
+                className="px-3 py-1 bg-blue-500 rounded-lg"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => deleteStory(story.id)}
+                className="px-3 py-1 bg-red-500 rounded-lg"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* MODAL */}
+      {modalOpen && (
+        <div className="fixed inset-0 bg-black/70 flex justify-center items-center p-4">
+          <div className="bg-[#242424] p-6 rounded-xl w-full max-w-lg">
+            <h2 className="text-2xl mb-4">
+              {editingStory ? "Edit Story" : "Add New Story"}
+            </h2>
+
+            <input
+              type="text"
+              placeholder="Story Title"
+              value={form.title}
+              onChange={(e) => setForm({ ...form, title: e.target.value })}
+              className="w-full p-2 mb-3 bg-[#333] rounded"
+            />
+
+            <textarea
+              placeholder="Description"
+              value={form.desc}
+              onChange={(e) => setForm({ ...form, desc: e.target.value })}
+              className="w-full p-2 mb-3 bg-[#333] rounded"
+            />
+
+            <input
+              type="text"
+              placeholder="YouTube Video URL"
+              value={form.videoUrl}
+              onChange={(e) => setForm({ ...form, videoUrl: e.target.value })}
+              className="w-full p-2 mb-3 bg-[#333] rounded"
+            />
+
+            <div className="flex justify-end gap-3 mt-4">
+              <button
+                onClick={() => setModalOpen(false)}
+                className="px-3 py-1 bg-gray-500 rounded"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={saveStory}
+                className="px-4 py-1 bg-[#E86B40] rounded"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

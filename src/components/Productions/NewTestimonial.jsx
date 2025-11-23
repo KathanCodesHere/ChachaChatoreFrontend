@@ -5,25 +5,25 @@ const Testimonials = () => {
   const items = [
     {
       image: "https://i.pravatar.cc/300?img=1",
-      title: "Client 1",
+      title: "Rohan Mehra",
       subtitle:
         "Working with Chacha Chatore Productions was like mixing fun with professionalism. Our campaign didn’t just reach people — it connected.",
-      handle: "@client1",
+      handle: "@RohanMehra",
       borderColor: "#f0ecd9 ",
       url: "https://github.com/sarahjohnson",
     },
     {
       image: "https://i.pravatar.cc/300?img=2",
-      title: "Client 2",
-      subtitle:"Working with Chacha Chatore Productions was like mixing fun with professionalism. Our campaign didn’t just reach people — it connected.",
-      handle: "@client2",
+      title: "Vikram Singh",
+      subtitle:"Chacha Chatore’s creative team made our brand story come alive. Their approach is fresh, engaging, and truly memorable.",
+      handle: "@VikramSingh",
       borderColor: "#f0ecd9",
       url: "https://linkedin.com/in/mikechen",
     },
     {
       image: "https://i.pravatar.cc/300?img=3",
-      title: "Client 3",
-      subtitle: "Working with Chacha Chatore Productions was like mixing fun with professionalism. Our campaign didn’t just reach people — it connected.",
+      title: "Priya Iyer",
+      subtitle: "From concept to execution, Chacha Chatore Productions exceeded our expectations. They made the process smooth and enjoyable.",
       handle: "@client3",
       borderColor: "#f0ecd9/40 ",
       url: "https://github.com/sarahjohnson",

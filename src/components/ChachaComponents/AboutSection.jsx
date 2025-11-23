@@ -80,7 +80,7 @@ const AboutSection = () => {
             transition={{ type: "spring", stiffness: 120 }}
           >
             <img
-              src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=687"
+              src="/assets/chacha1.jpg"
               alt="Chacha Chatore"
               className="rounded-2xl shadow-[0_0_25px_#7DF9FF] w-full max-w-sm md:max-w-md h-[70vh] object-cover"
             />

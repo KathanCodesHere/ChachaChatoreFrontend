@@ -123,8 +123,8 @@ const FeaturedStories = () => {
         animate={{ opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="flex justify-center my-4">
-        <img src="/images/CCIGT.gif" alt=""  />
+      <div className="flex justify-center mt-10 mb-8">
+        <img src="/assets/chachayt.gif" alt=""  className="w-[500px] md:w-[600px] lg:w-[700px] object-contain" />
       </div>
     </section>
   );

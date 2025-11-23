@@ -46,7 +46,7 @@ const CTA = () => {
             </a>
             
             <a
-              href="https://instagram.com/chachachatore"
+              href="https://www.instagram.com/chachachatoreproductions/?igsh=MTM0emF4ZmVyMWNndQ%3D%3D#"
               target="_blank"
               rel="noopener noreferrer"
               className="menu-card flex flex-col items-center justify-center p-8 group hover:scale-105 transition-transform border-white border"
@@ -54,13 +54,13 @@ const CTA = () => {
               <Instagram className="w-12 h-12 text-[#e86b40] mb-4 group-hover:scale-110 transition-transform" />
               <span className="font-anton text-[#f0ecd9] text-xl mb-2">Slide into DMs </span>
               <span className="font-open text-sm dont-open text-muted-foreground">(Cool kids only)</span>
-              <span className="font-open text-xs text-[#f0ecd9] mt-1">@chachachatore</span>
+              <span className="font-open text-xs text-[#f0ecd9] mt-1">@chachachatoreproductions</span>
             </a>
           </div>
           
           {/* Primary CTA Button */}
           <div className="animate-fade-in animation-delay-400">
-            <a href="#work" className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-[#f0ecd9] border-white border">
+            <a href="#stories" className="btn-street font-open font-medium hover:text-[#e86b40] text-xl px-12 py-3 text-[#f0ecd9] border-white border">
               See Our Work
             </a>
           </div>

@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 const storyPoints = [
   {
     id: 1,
-    title: "Street-side vibes",
-    desc: "Relatable, unfiltered, raw.",
-    video: "https://www.youtube.com/shorts/51OCVGigWLQ",
+    title: "Hindustan Ka Dil Dekho",
+    desc: "Celebrating local culture with global relatability.",
+    video: "https://www.youtube.com/shorts/hdQkOalpu-k",
   },
   {
     id: 2,
-    title: "Desi humor",
+    title: "Desi Icon Ki Kahaani",
     desc: "A little spice, a little satire.",
-    video: "https://www.youtube.com/watch?v=GUv-nBm8-ds"
+    video: "https://www.youtube.com/shorts/1vDTaUXaJCE"
   },
   {
     id: 3,
-    title: "Hindustan Ka Dil Dekho",
-    desc: "Celebrating local culture with global relatability.",
-    video: "https://www.youtube.com/watch?v=q_-vr4mO1xg",
+    title: "A Bite of Mumbai",
+    desc: "Local flavor, global fanbase..",
+    video: "https://www.youtube.com/shorts/vXyN0G1493I",
   },
   {
     id: 4,
-    title: "Beyond food",
-    desc: "People, places, history, and the quirks that make them unique.",
-    video: "https://www.youtube.com/shorts/Iyti-cNVgxs",
+    title: "From Faah to Faluda",
+    desc: "Zindagi ne twist diya… aur humne usse dessert bana diya.",
+    video: "https://www.youtube.com/shorts/RzVzFatxnf4",
   },
 ];
 
@@ -101,8 +101,8 @@ const StorySection = () => {
         Because food is never just food — it’s an emotion, a memory, a story
         waiting to be shared.
       </motion.p>
-      <div className="flex justify-center">
-          <img src="/images/Cc.gif" alt="" />
+      <div className="flex justify-center mt-20 md:mt-10">
+          <img src="/assets/chacha.gif" alt="" className="w-[500px] md:w-[600px] lg:w-[700px] object-cover" />
       </div>  
     </section>
   );
