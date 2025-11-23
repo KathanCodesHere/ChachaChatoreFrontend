@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import FeaturedStoriesAdmin from "../components/admin/FeaturedStoriesAdmin";
 import RecipesInActionAdmin from "../components/admin/RecipesInActionAdmin";
 import GetInTouchAdmin from "../components/admin/GetInTouchAdmin"; 
+import ClientsAdmin from "../components/admin/ClientsAdmin";
+import LatestArticlesAdmin from "@/components/admin/LatestArticlesAdmin";
 
 const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState("featured");
@@ -14,7 +16,7 @@ const AdminDashboard = () => {
           Admin Dashboard
         </h2>
 
-        {/* Featured Stories */}
+        {/* Sidebar Buttons */}
         <button
           onClick={() => setActiveSection("featured")}
           className={`text-left py-2 px-3 rounded-lg font-semibold transition-all ${
@@ -26,7 +28,6 @@ const AdminDashboard = () => {
           Featured Stories
         </button>
 
-        {/* Recipes In Action */}
         <button
           onClick={() => setActiveSection("recipes")}
           className={`text-left py-2 px-3 rounded-lg font-semibold transition-all ${
@@ -38,7 +39,6 @@ const AdminDashboard = () => {
           Our Recipes in Action
         </button>
 
-        {/* Get In Touch */}
         <button
           onClick={() => setActiveSection("touch")}
           className={`text-left py-2 px-3 rounded-lg font-semibold transition-all ${
@@ -49,13 +49,37 @@ const AdminDashboard = () => {
         >
           Get In Touch
         </button>
+
+        <button
+          onClick={() => setActiveSection("clients")}
+          className={`text-left py-2 px-3 rounded-lg font-semibold transition-all ${
+            activeSection === "clients"
+              ? "bg-[#E86B40] text-[#1b1b1b]"
+              : "hover:bg-[#333] text-[#F0ECD9]"
+          }`}
+        >
+          Clients
+        </button>
+
+        <button
+          onClick={() => setActiveSection("articles")}
+          className={`text-left py-2 px-3 rounded-lg font-semibold transition-all ${
+            activeSection === "articles"
+              ? "bg-[#E86B40] text-[#1b1b1b]"
+              : "hover:bg-[#333] text-[#F0ECD9]"
+          }`}
+        >
+          Latest Articles
+        </button>
       </aside>
 
       {/* Main Content */}
       <main className="flex-1 p-8 overflow-y-auto">
         {activeSection === "featured" && <FeaturedStoriesAdmin />}
         {activeSection === "recipes" && <RecipesInActionAdmin />}
-        {activeSection === "touch" && <GetInTouchAdmin />} {/* <-- Render it */}
+        {activeSection === "touch" && <GetInTouchAdmin />}
+        {activeSection === "clients" && <ClientsAdmin />}
+        {activeSection === "articles" && <LatestArticlesAdmin />}
       </main>
     </div>
   );
