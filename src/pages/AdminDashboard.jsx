@@ -40,7 +40,7 @@ const AdminDashboard = () => {
           {[
             ["featured", "Featured Stories"],
             ["recipes", "Our Recipes in Action"],
-            ["touch", "Get In Touch"],
+            ["touch", "Client Enquiries"],
             ["clients", "Clients"],
             ["articles", "Latest Articles"],
           ].map(([key, label]) => (

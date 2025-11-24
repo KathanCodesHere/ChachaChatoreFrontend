@@ -40,7 +40,7 @@ export default function ClientsAdmin() {
 
   const handleAdd = () => {
     if (!newClient.name || !newClient.image) {
-      alert("Please enter a name and image URL.");
+      alert("Please enter a name and upload an image.");
       return;
     }
     const id = Date.now();
@@ -55,7 +55,7 @@ export default function ClientsAdmin() {
 
   const handleEditSave = () => {
     if (!editClient.name || !editClient.image) {
-      alert("Please enter a name and image URL.");
+      alert("Please enter a name and upload an image.");
       return;
     }
     setClients(clients.map((c) => (c.id === editClient.id ? editClient : c)));
@@ -82,18 +82,18 @@ export default function ClientsAdmin() {
         {clients.map((client) => (
           <div
             key={client.id}
-            className="bg-[#1f1f1f] rounded-xl p-4 border border-[#333] shadow-md w-full"
+            className="bg-[#1f1f1f] rounded-xl p-4 border border-[#333] shadow-md w-full flex flex-col"
           >
             <img
               src={client.image}
               alt={client.name}
-              className="w-20 h-20 rounded-full mb-3 mx-auto"
+              className="w-20 h-20 rounded-full mb-3 mx-auto object-cover"
             />
             <h2 className="font-bold text-lg text-center text-[#00BFFF]">
               {client.name}
             </h2>
 
-            <p className="text-gray-300 mt-2 text-sm text-center leading-relaxed">
+            <p className="text-gray-300 mt-2 text-sm text-center leading-relaxed flex-1">
               {client.review}
             </p>
 
@@ -124,32 +124,39 @@ export default function ClientsAdmin() {
       {/* MODAL */}
       {editClient && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex justify-center items-center p-4 z-50 overflow-y-auto">
-
           <div className="bg-[#222] border border-[#444] w-full max-w-md p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
 
             <h2 className="text-xl font-bold text-[#E86B40] mb-4 text-center">
               {editClient === "add" ? "Add New Client" : "Edit Client"}
             </h2>
 
-            {/* IMAGE URL */}
-            <label className="block text-gray-300 mb-1">Image URL</label>
+            {/* IMAGE UPLOAD */}
+            <label className="block text-gray-300 mb-1">Upload Image</label>
             <input
-              type="text"
-              placeholder="Image URL"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3"
-              value={editClient === "add" ? newClient.image : editClient.image}
-              onChange={(e) =>
-                editClient === "add"
-                  ? setNewClient({ ...newClient, image: e.target.value })
-                  : setEditClient({ ...editClient, image: e.target.value })
-              }
+              type="file"
+              accept="image/*"
+              className="w-full mb-3"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onload = () => {
+                    if (editClient === "add") {
+                      setNewClient({ ...newClient, image: reader.result });
+                    } else {
+                      setEditClient({ ...editClient, image: reader.result });
+                    }
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
             />
 
             {/* PREVIEW */}
             {(editClient === "add" ? newClient.image : editClient.image) && (
               <img
                 src={editClient === "add" ? newClient.image : editClient.image}
-                className="w-24 h-24 rounded-full mx-auto mb-4 border border-[#555]"
+                className="w-20 h-20 rounded-full mx-auto mb-4 border border-[#555] object-cover"
               />
             )}
 

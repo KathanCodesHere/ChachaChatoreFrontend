@@ -33,7 +33,7 @@ const FeaturedWorkP = () => {
 //   };
 
   return (
-    <section id="stories" className="py-24 md:py-32 bg-neutral-900 relative overflow-hidden">
+    <section id="stories" className="py-24 md:py-32 bg-black relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
 

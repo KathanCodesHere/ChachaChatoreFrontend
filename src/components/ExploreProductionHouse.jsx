@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ExploreProductionHouse = () => {
   return (
-    <div className="w-full h-[40vh] flex flex-col items-center justify-center text-center px-6">
+    <div className="w-full h-[70vh] flex flex-col items-center justify-center text-center px-6">
       
           <h2 className="text-center font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-[#f0ecd9] leading-none mb-6">
               <span className="text-[#e86b40]">How We Build </span>Our Brand
