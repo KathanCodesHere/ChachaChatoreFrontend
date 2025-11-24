@@ -96,24 +96,31 @@ const FeaturedStoriesAdmin = () => {
         </button>
       </div>
 
-      {/* LIST */}
+      {/* STORIES GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {stories.map((story) => (
           <div
             key={story.id}
-            className="bg-[#242424] p-4 rounded-xl border border-[#333]"
+            className="bg-[#242424] p-4 rounded-xl border border-[#333] flex flex-col h-full"
           >
-            <h3 className="text-lg sm:text-xl font-bold text-[#00BFFF] break-words">
-              {story.title}
-            </h3>
+            {/* Scrollable content */}
+            <div className="flex-1 overflow-hidden">
+              <h3 className="text-lg sm:text-xl font-bold text-[#00BFFF] break-words mb-2">
+                {story.title}
+              </h3>
 
-            <p className="text-sm text-gray-300 mt-1 break-words">{story.desc}</p>
+              <p className="text-sm text-gray-300 break-words mb-3 line-clamp-4">
+                {story.desc}
+              </p>
 
-            <iframe
-              src={story.videoUrl}
-              className="w-full h-48 sm:h-40 mt-3 rounded-lg"
-            ></iframe>
-
+              <div className="w-full h-40 sm:h-36">
+                <iframe
+                  src={story.videoUrl}
+                  className="w-full h-full rounded-lg"
+                ></iframe>
+              </div>
+            </div>
+            {/* Buttons fixed at bottom */}
             <div className="flex gap-3 mt-4">
               <button
                 onClick={() => openEditModal(story)}
