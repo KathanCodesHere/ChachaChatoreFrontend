@@ -38,30 +38,35 @@ export default function ClientsAdmin() {
 
   const [editClient, setEditClient] = useState(null);
 
-  // ---- ADD CLIENT ----
   const handleAdd = () => {
+    if (!newClient.name || !newClient.image) {
+      alert("Please enter a name and image URL.");
+      return;
+    }
     const id = Date.now();
     setClients([...clients, { id, ...newClient }]);
     setNewClient({ name: "", review: "", handle: "", image: "" });
     setEditClient(null);
   };
 
-  // ---- DELETE CLIENT ----
   const handleDelete = (id) => {
     setClients(clients.filter((c) => c.id !== id));
   };
 
-  // ---- SAVE EDIT ----
   const handleEditSave = () => {
+    if (!editClient.name || !editClient.image) {
+      alert("Please enter a name and image URL.");
+      return;
+    }
     setClients(clients.map((c) => (c.id === editClient.id ? editClient : c)));
     setEditClient(null);
   };
 
   return (
-    <div className="p-6 text-white">
+    <div className="p-4 sm:p-6 text-white">
 
       {/* HEADER */}
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
         <h1 className="text-3xl font-bold text-[#E86B40]">Clients Admin</h1>
 
         <button
@@ -72,24 +77,32 @@ export default function ClientsAdmin() {
         </button>
       </div>
 
-      {/* CLIENT CARDS */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* RESPONSIVE GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {clients.map((client) => (
           <div
             key={client.id}
-            className="bg-[#1f1f1f] rounded-xl shadow-md p-4 border border-[#333] w-full"
+            className="bg-[#1f1f1f] rounded-xl p-4 border border-[#333] shadow-md w-full"
           >
             <img
               src={client.image}
               alt={client.name}
-              className="w-16 h-16 rounded-full mb-2"
+              className="w-20 h-20 rounded-full mb-3 mx-auto"
             />
-            <h2 className="font-bold text-lg text-[#00BFFF]">{client.name}</h2>
-            <p className="text-gray-300 mt-1">{client.review}</p>
-            <p className="text-gray-400 text-sm mt-1">{client.handle}</p>
+            <h2 className="font-bold text-lg text-center text-[#00BFFF]">
+              {client.name}
+            </h2>
+
+            <p className="text-gray-300 mt-2 text-sm text-center leading-relaxed">
+              {client.review}
+            </p>
+
+            <p className="text-gray-400 text-xs mt-1 text-center">
+              {client.handle}
+            </p>
 
             {/* ACTION BUTTONS */}
-            <div className="flex gap-4 mt-3">
+            <div className="flex justify-center gap-6 mt-4">
               <button
                 onClick={() => setEditClient(client)}
                 className="flex items-center gap-1 text-yellow-400 hover:text-yellow-300"
@@ -110,18 +123,20 @@ export default function ClientsAdmin() {
 
       {/* MODAL */}
       {editClient && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-50">
-          <div className="bg-[#222] border border-[#444] w-96 p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex justify-center items-center p-4 z-50 overflow-y-auto">
 
-            <h2 className="text-xl font-bold text-[#E86B40] mb-4">
+          <div className="bg-[#222] border border-[#444] w-full max-w-md p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
+
+            <h2 className="text-xl font-bold text-[#E86B40] mb-4 text-center">
               {editClient === "add" ? "Add New Client" : "Edit Client"}
             </h2>
 
-            {/* IMAGE */}
+            {/* IMAGE URL */}
+            <label className="block text-gray-300 mb-1">Image URL</label>
             <input
               type="text"
               placeholder="Image URL"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
+              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3"
               value={editClient === "add" ? newClient.image : editClient.image}
               onChange={(e) =>
                 editClient === "add"
@@ -130,11 +145,20 @@ export default function ClientsAdmin() {
               }
             />
 
+            {/* PREVIEW */}
+            {(editClient === "add" ? newClient.image : editClient.image) && (
+              <img
+                src={editClient === "add" ? newClient.image : editClient.image}
+                className="w-24 h-24 rounded-full mx-auto mb-4 border border-[#555]"
+              />
+            )}
+
             {/* NAME */}
+            <label className="block text-gray-300 mb-1">Client Name</label>
             <input
               type="text"
               placeholder="Client Name"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
+              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3"
               value={editClient === "add" ? newClient.name : editClient.name}
               onChange={(e) =>
                 editClient === "add"
@@ -144,9 +168,10 @@ export default function ClientsAdmin() {
             />
 
             {/* REVIEW */}
+            <label className="block text-gray-300 mb-1">Review</label>
             <textarea
               placeholder="Client Review"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
+              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3"
               value={editClient === "add" ? newClient.review : editClient.review}
               onChange={(e) =>
                 editClient === "add"
@@ -156,10 +181,11 @@ export default function ClientsAdmin() {
             />
 
             {/* HANDLE */}
+            <label className="block text-gray-300 mb-1">Handle</label>
             <input
               type="text"
               placeholder="Client Handle"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4 outline-none focus:border-[#E86B40]"
+              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4"
               value={editClient === "add" ? newClient.handle : editClient.handle}
               onChange={(e) =>
                 editClient === "add"
@@ -184,11 +210,9 @@ export default function ClientsAdmin() {
                 {editClient === "add" ? "Add" : "Save"}
               </button>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }

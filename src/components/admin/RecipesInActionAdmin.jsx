@@ -51,50 +51,53 @@ export default function RecipeVideos() {
   };
 
   return (
-    <div className="p-6 text-white">
+    <div className="p-4 sm:p-6 text-white">
 
       {/* HEADER */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-[#E86B40]">Recipe In Action</h1>
+      <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-6 gap-3">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#E86B40]">
+          Recipe In Action
+        </h1>
 
         <button
           onClick={() => setEditVideo("add")}
-          className="flex items-center gap-2 px-4 py-2 bg-[#E86B40] text-black rounded-lg font-semibold"
+          className="flex items-center gap-2 px-4 py-2 bg-[#E86B40] text-black rounded-lg font-semibold w-full sm:w-auto"
         >
           <Plus size={18} /> Add Video
         </button>
       </div>
 
       {/* VIDEO CARDS */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {videos.map((video) => (
           <div
             key={video.id}
-            className="bg-[#1f1f1f] rounded-xl shadow-md p-4 border border-[#333] w-full"
+            className="bg-[#1f1f1f] rounded-xl shadow-md p-4 border border-[#333]"
           >
-            
             {/* AUTO-DETECT VIDEO TYPE */}
             {video.videoUrl.includes("youtube") ? (
               <iframe
-                className="w-full h-40 rounded-lg"
+                className="w-full h-48 sm:h-40 rounded-lg"
                 src={video.videoUrl}
                 allowFullScreen
                 title={video.videoTitle}
               ></iframe>
             ) : (
               <video
-                className="w-full h-40 rounded-lg"
+                className="w-full h-48 sm:h-40 rounded-lg"
                 src={video.videoUrl}
                 controls
               ></video>
             )}
 
             {/* TITLE */}
-            <h2 className="font-bold text-lg text-[#E86B40] mt-3">
+            <h2 className="font-bold text-lg text-[#E86B40] mt-3 break-words">
               {video.videoTitle}
             </h2>
 
-            <p className="text-gray-400 text-xs mt-1 truncate">{video.videoUrl}</p>
+            <p className="text-gray-400 text-xs mt-1 break-all">
+              {video.videoUrl}
+            </p>
             <p className="text-gray-500 text-xs">Video ID: {video.videoId}</p>
 
             {/* ACTION BUTTONS */}
@@ -119,17 +122,18 @@ export default function RecipeVideos() {
 
       {/* MODAL */}
       {editVideo && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-50">
-          <div className="bg-[#222] border border-[#444] w-96 p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-50 p-4">
+          <div className="bg-[#222] border border-[#444] w-full max-w-md p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
 
-            <h2 className="text-xl font-bold text-[#E86B40] mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#E86B40] mb-4">
               {editVideo === "add" ? "Add New Video" : "Edit Video"}
             </h2>
 
             {/* VIDEO TITLE */}
+            <label className="text-sm text-gray-300">Video Title</label>
             <input
               type="text"
-              placeholder="Video Title"
+              placeholder="Enter Video Title"
               className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
               value={editVideo === "add" ? newVideo.videoTitle : editVideo.videoTitle}
               onChange={(e) =>
@@ -140,6 +144,7 @@ export default function RecipeVideos() {
             />
 
             {/* VIDEO URL */}
+            <label className="text-sm text-gray-300">Video URL</label>
             <input
               type="text"
               placeholder="YouTube Embed / MP4 URL"
@@ -153,9 +158,10 @@ export default function RecipeVideos() {
             />
 
             {/* VIDEO ID */}
+            <label className="text-sm text-gray-300">Video ID</label>
             <input
               type="text"
-              placeholder="Video ID"
+              placeholder="Enter Video ID"
               className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4 outline-none focus:border-[#E86B40]"
               value={editVideo === "add" ? newVideo.videoId : editVideo.videoId}
               onChange={(e) =>
@@ -166,17 +172,17 @@ export default function RecipeVideos() {
             />
 
             {/* BUTTONS */}
-            <div className="flex justify-end gap-3">
+            <div className="flex flex-col sm:flex-row justify-end gap-3">
               <button
                 onClick={() => setEditVideo(null)}
-                className="px-3 py-1 rounded bg-[#333] text-white hover:bg-[#444]"
+                className="px-4 py-2 rounded bg-[#333] text-white hover:bg-[#444] w-full sm:w-auto"
               >
                 Cancel
               </button>
 
               <button
                 onClick={editVideo === "add" ? handleAdd : handleEditSave}
-                className="px-4 py-1 bg-[#E86B40] text-black font-semibold rounded hover:bg-[#ff8a5c]"
+                className="px-4 py-2 bg-[#E86B40] text-black font-semibold rounded hover:bg-[#ff8a5c] w-full sm:w-auto"
               >
                 {editVideo === "add" ? "Add" : "Save"}
               </button>
@@ -185,7 +191,6 @@ export default function RecipeVideos() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
