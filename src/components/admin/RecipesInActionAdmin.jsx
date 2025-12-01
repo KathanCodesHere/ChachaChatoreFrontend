@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Pencil, Trash2, Plus } from "lucide-react";
 
 export default function RecipeVideos() {
   const fetchURL = "https://chachachatore.com/services/admin/videos/all.php";
-  const deleteURL = "https://chachachatore.com/services/admin/videos/delete.php"; // Replace if different
+  const deleteURL = "https://chachachatore.com/services/admin/videos/delete.php";
+  const addURL = "https://chachachatore.com/services/admin/videos/add.php";
+  const editURL = "https://chachachatore.com/services/admin/videos/edit.php";
+
   const token = "09c26f3616fbb069c5b07d797b79ba362a384600";
 
   const [videos, setVideos] = useState([]);
-  const [newVideo, setNewVideo] = useState({ videoTitle: "", videoUrl: "", videoId: "" });
-  const [editVideo, setEditVideo] = useState(null);
+  const [modal, setModal] = useState(null);
+  const editID = useRef(null);
+  const titleRef = useRef();
+  const urlRef = useRef();
+  const videoIdRef = useRef();
 
-//get api
+  // get api 
   const fetchVideos = async () => {
     try {
       const res = await axios.get(fetchURL, { headers: { Authorization: token } });
-      console.log("API VIDEOS:", res.data);
 
       if (res.data.status === "success") {
         setVideos(res.data.videos || []);
@@ -28,7 +33,7 @@ export default function RecipeVideos() {
   useEffect(() => {
     fetchVideos();
   }, []);
-//Delete api
+  // Delete api 
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(deleteURL, {
@@ -43,16 +48,78 @@ export default function RecipeVideos() {
     }
   };
 
-  const handleAdd = () => {
-    const id = Date.now();
-    setVideos([...videos, { id, ...newVideo }]);
-    setNewVideo({ videoTitle: "", videoUrl: "", videoId: "" });
-    setEditVideo(null);
+  // OPEN ADD MODAL
+  const openAdd = () => {
+    setModal("add");
+    setTimeout(() => {
+      titleRef.current.value = "";
+      urlRef.current.value = "";
+      videoIdRef.current.value = "";
+    }, 0);
   };
 
-  const handleEditSave = () => {
-    setVideos(videos.map((v) => (v.id === editVideo.id ? editVideo : v)));
-    setEditVideo(null);
+  // OPEN EDIT MODAL
+  const openEdit = (video) => {
+    editID.current = video.id;
+    setModal("edit");
+    setTimeout(() => {
+      titleRef.current.value = video.video_title;
+      urlRef.current.value = video.video_url;
+      videoIdRef.current.value = video.video_id;
+    }, 0);
+  };
+
+  // Add api
+  const handleAdd = async () => {
+    const title = titleRef.current.value.trim();
+    const url = urlRef.current.value.trim();
+    const vid = videoIdRef.current.value.trim();
+
+    if (!title || !url || !vid) return;
+
+    try {
+      await axios.post(
+        addURL,
+        {
+          video_title: title,
+          video_url: url,
+          video_id: vid,
+        },
+        { headers: { Authorization: token } }
+      );
+
+      fetchVideos();
+      setModal(null);
+    } catch (err) {
+      console.error("Add Error:", err);
+    }
+  };
+
+  // Edit api
+  const handleEditSave = async () => {
+    const title = titleRef.current.value.trim();
+    const url = urlRef.current.value.trim();
+    const vid = videoIdRef.current.value.trim();
+
+    if (!title || !url || !vid) return;
+
+    try {
+      await axios.post(
+        editURL,
+        {
+          id: editID.current,
+          video_title: title,
+          video_url: url,
+          video_id: vid,
+        },
+        { headers: { Authorization: token } }
+      );
+
+      fetchVideos();
+      setModal(null);
+    } catch (err) {
+      console.error("Edit Error:", err);
+    }
   };
 
   return (
@@ -61,7 +128,7 @@ export default function RecipeVideos() {
       <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-6 gap-3">
         <h1 className="text-2xl sm:text-3xl font-bold text-[#E86B40]">Recipe In Action</h1>
         <button
-          onClick={() => setEditVideo("add")}
+          onClick={openAdd}
           className="flex items-center gap-2 px-4 py-2 bg-[#E86B40] text-black rounded-lg font-semibold w-full sm:w-auto"
         >
           <Plus size={18} /> Add Video
@@ -72,29 +139,27 @@ export default function RecipeVideos() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {videos.map((video) => (
           <div key={video.id} className="bg-[#1f1f1f] rounded-xl shadow-md p-4 border border-[#333]">
-            {/* SAFE VIDEO URL */}
-            {(video.videoUrl || "").includes("youtube") ? (
+            {(video.video_url || "").includes("youtube") ? (
               <iframe
                 className="w-full h-48 sm:h-40 rounded-lg"
-                src={video.videoUrl || ""}
+                src={video.video_url}
                 allowFullScreen
-                title={video.videoTitle || "Untitled Video"}
               ></iframe>
             ) : (
-              <video className="w-full h-48 sm:h-40 rounded-lg" src={video.videoUrl || ""} controls />
+              <video className="w-full h-48 sm:h-40 rounded-lg" src={video.video_url} controls />
             )}
 
             <h2 className="font-bold text-lg text-[#E86B40] mt-3 break-words">
-              {video.videoTitle || "Untitled Video"}
+              {video.video_title}
             </h2>
 
-            <p className="text-gray-400 text-xs mt-1 break-all">{video.videoUrl || "No URL"}</p>
-            <p className="text-gray-500 text-xs">Video ID: {video.videoId || "N/A"}</p>
+            <p className="text-gray-400 text-xs mt-1 break-all">{video.video_url}</p>
+            <p className="text-gray-500 text-xs">Video ID: {video.video_id}</p>
 
             {/* ACTION BUTTONS */}
             <div className="flex gap-4 mt-3">
               <button
-                onClick={() => setEditVideo(video)}
+                onClick={() => openEdit(video)}
                 className="flex items-center gap-1 text-yellow-400 hover:text-yellow-300"
               >
                 <Pencil size={16} /> Edit
@@ -111,64 +176,37 @@ export default function RecipeVideos() {
       </div>
 
       {/* MODAL */}
-      {editVideo && (
+      {modal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-50 p-4">
           <div className="bg-[#222] border border-[#444] w-full max-w-md p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
             <h2 className="text-xl sm:text-2xl font-bold text-[#E86B40] mb-4">
-              {editVideo === "add" ? "Add New Video" : "Edit Video"}
+              {modal === "add" ? "Add New Video" : "Edit Video"}
             </h2>
 
             <label className="text-sm text-gray-300">Video Title</label>
-            <input
-              type="text"
-              placeholder="Enter Video Title"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
-              value={editVideo === "add" ? newVideo.videoTitle : editVideo.videoTitle || ""}
-              onChange={(e) =>
-                editVideo === "add"
-                  ? setNewVideo({ ...newVideo, videoTitle: e.target.value })
-                  : setEditVideo({ ...editVideo, videoTitle: e.target.value })
-              }
+            <input type="text" ref={titleRef} className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
             />
 
             <label className="text-sm text-gray-300">Video URL</label>
-            <input
-              type="text"
-              placeholder="YouTube Embed / MP4 URL"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
-              value={editVideo === "add" ? newVideo.videoUrl : editVideo.videoUrl || ""}
-              onChange={(e) =>
-                editVideo === "add"
-                  ? setNewVideo({ ...newVideo, videoUrl: e.target.value })
-                  : setEditVideo({ ...editVideo, videoUrl: e.target.value })
-              }
+            <input type="text" ref={urlRef} className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
             />
 
             <label className="text-sm text-gray-300">Video ID</label>
-            <input
-              type="text"
-              placeholder="Enter Video ID"
-              className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4 outline-none focus:border-[#E86B40]"
-              value={editVideo === "add" ? newVideo.videoId : editVideo.videoId || ""}
-              onChange={(e) =>
-                editVideo === "add"
-                  ? setNewVideo({ ...newVideo, videoId: e.target.value })
-                  : setEditVideo({ ...editVideo, videoId: e.target.value })
-              }
+            <input type="text" ref={videoIdRef} className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4 outline-none focus:border-[#E86B40]"
             />
 
             <div className="flex flex-col sm:flex-row justify-end gap-3">
               <button
-                onClick={() => setEditVideo(null)}
+                onClick={() => setModal(null)}
                 className="px-4 py-2 rounded bg-[#333] text-white hover:bg-[#444] w-full sm:w-auto"
               >
                 Cancel
               </button>
               <button
-                onClick={editVideo === "add" ? handleAdd : handleEditSave}
+                onClick={modal === "add" ? handleAdd : handleEditSave}
                 className="px-4 py-2 bg-[#E86B40] text-black font-semibold rounded hover:bg-[#ff8a5c] w-full sm:w-auto"
               >
-                {editVideo === "add" ? "Add" : "Save"}
+                {modal === "add" ? "Add" : "Save"}
               </button>
             </div>
           </div>
