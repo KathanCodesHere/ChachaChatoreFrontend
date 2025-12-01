@@ -1,34 +1,30 @@
-import React from "react";
-import ChromaGrid from "../reactbits/ChromaGrid";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Testimonials = () => {
-  const items = [
-    {
-      image: "https://i.pravatar.cc/300?img=1",
-      title: "Rohan Mehra",
-      subtitle:
-        "Working with Chacha Chatore Productions was like mixing fun with professionalism. Our campaign didn’t just reach people — it connected.",
-      handle: "@RohanMehra",
-      borderColor: "#f0ecd9 ",
-      url: "https://github.com/sarahjohnson",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=2",
-      title: "Vikram Singh",
-      subtitle:"Chacha Chatore’s creative team made our brand story come alive. Their approach is fresh, engaging, and truly memorable.",
-      handle: "@VikramSingh",
-      borderColor: "#f0ecd9",
-      url: "https://linkedin.com/in/mikechen",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=3",
-      title: "Priya Iyer",
-      subtitle: "From concept to execution, Chacha Chatore Productions exceeded our expectations. They made the process smooth and enjoyable.",
-      handle: "@client3",
-      borderColor: "#f0ecd9/40 ",
-      url: "https://github.com/sarahjohnson",
-    },
-  ];
+  const [clients, setClients] = useState([]);
+  const token = "09c26f3616fbb069c5b07d797b79ba362a384600";
+  const fetchURL = "https://chachachatore.com/services/admin/clients/fetch.php";
+
+  const DEFAULT_BORDER_COLOR = "#f0ecd9/40";
+
+  // Fetch clients from backend
+  const fetchClients = async () => {
+    try {
+      const res = await axios.get(fetchURL, { headers: { Authorization: token } });
+      if (res.data.status === "success" && res.data.clients) {
+        setClients(res.data.clients);
+      } else {
+        console.log("No clients found");
+      }
+    } catch (err) {
+      console.error("Fetch Error:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchClients();
+  }, []);
 
   return (
     <div className="py-20 bg-black">
@@ -40,32 +36,39 @@ const Testimonials = () => {
 
       {/* Grid Section */}
       <div className="py-10 relative flex flex-wrap justify-center gap-10 px-6">
-        {items.map((item, index) => (
+        {clients.map((client) => (
           <div
-            key={index}
-            className="w-80 bg-[#222] border-2 rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105"
+            key={client.id}
+            className="w-80 bg-[#222] border-2 rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 flex flex-col items-center"
             style={{
-              borderColor: item.borderColor,
-              boxShadow: `0 0 15px ${item.borderColor}50`,
+              borderColor: DEFAULT_BORDER_COLOR,
+              boxShadow: `0 0 15px ${DEFAULT_BORDER_COLOR}50`,
             }}
           >
             <img
-              src={item.image}
-              alt={item.title}
-              className="w-24 h-24 rounded-full mx-auto mb-4 border-2"
-              style={{ borderColor: item.borderColor }}
+              src={client.image}
+              alt={client.client_name}
+              className="w-24 h-24 rounded-full mx-auto mb-4 border-2 object-cover"
+              style={{ borderColor: DEFAULT_BORDER_COLOR }}
             />
-            <h3 className="text-[#f0ecd9] font-semibold text-xl mb-2">
-              {item.title}
+
+            {/* Fixed height for name */}
+            <h3 className="text-[#e86b40] font-semibold text-xl mb-2 h-8 overflow-hidden text-ellipsis whitespace-nowrap text-center">
+              {client.client_name}
             </h3>
-            <p className="text-[#ccc] text-sm mb-3">{item.subtitle}</p>
+
+            {/* Fixed height for review */}
+            <p className="text-[#ccc] text-sm mb-3 h-14 overflow-hidden text-ellipsis text-center">
+              {client.client_review}
+            </p>
+
             <a
-              href={item.url}
+              href={client.client_handle || "#"}
               target="_blank"
               rel="noreferrer"
-              className="text-[#e86b40] font-bold hover:underline"
+              className="text-[#e86b40] font-bold hover:underline text-center"
             >
-              {item.handle}
+              {client.client_handle}
             </a>
           </div>
         ))}
