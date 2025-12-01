@@ -1,34 +1,8 @@
-import React, { useState } from "react";
-
-const initialStories = [
-  {
-    id: 1,
-    title: "Indore’s Best Poha-Jalebi Morning",
-    desc: "A delicious morning story from the streets of Indore.",
-    videoUrl: "https://www.youtube-nocookie.com/embed/YQ8C7KWDlTY?si=fmYw6eRgZyA2Mxde",
-  },
-  {
-    id: 2,
-    title: "Street Food Tales from Sarafa Bazaar",
-    desc: "Where flavors, lights, and laughter never sleep.",
-    videoUrl: "https://www.youtube-nocookie.com/embed/YQ8C7KWDlTY?si=fmYw6eRgZyA2Mxde",
-  },
-  {
-    id: 3,
-    title: "Delhi’s Chaat Magic",
-    desc: "Exploring spicy, tangy, and sweet street wonders of Delhi.",
-    videoUrl: "https://www.youtube-nocookie.com/embed/jfKfPfyJRdk",
-  },
-  {
-    id: 4,
-    title: "Mumbai’s Rainy Vada Pav Trail",
-    desc: "Because nothing beats chai and vada pav in the rain.",
-    videoUrl: "https://www.youtube-nocookie.com/embed/jfKfPfyJRdk",
-  },
-];
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const FeaturedStoriesAdmin = () => {
-  const [stories, setStories] = useState(initialStories);
+  const [stories, setStories] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [editingStory, setEditingStory] = useState(null);
 
@@ -37,6 +11,24 @@ const FeaturedStoriesAdmin = () => {
     desc: "",
     videoUrl: "",
   });
+//get api
+  const fetchStories = async () => {
+    try {
+      const res = await axios.get("https://chachachatore.com/services/stories.php");
+      if (res.data.status === "success") {
+        setStories(res.data.data);
+      } else {
+        alert(res.data.message || "Failed to fetch stories.");
+      }
+    } catch (error) {
+      console.error("Error fetching stories:", error);
+      alert("Error fetching stories");
+    }
+  };
+
+  useEffect(() => {
+    fetchStories();
+  }, []);
 
   const openAddModal = () => {
     setEditingStory(null);
@@ -76,18 +68,31 @@ const FeaturedStoriesAdmin = () => {
 
     setModalOpen(false);
   };
+//delete api
+  const deleteStory = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this story?")) return;
 
-  const deleteStory = (id) => {
-    setStories(stories.filter((s) => s.id !== id));
+    try {
+      const res = await axios.delete(`https://chachachatore.com/services/stories.php`, {
+        data: { id }, 
+      });
+
+      if (res.data.status === "success") {
+        setStories(stories.filter((s) => s.id !== id));
+      } else {
+        alert(res.data.message || "Failed to delete story.");
+      }
+    } catch (error) {
+      console.error("Error deleting story:", error);
+      alert("Error deleting story");
+    }
   };
 
   return (
     <div className="p-4 sm:p-6 text-white">
-
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-6 gap-3">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#E86B40]">Featured Stories Admin</h2>
-
         <button
           onClick={openAddModal}
           className="bg-[#E86B40] px-4 py-2 rounded-lg font-semibold text-black hover:bg-[#ff8a5c] w-full sm:w-auto"
@@ -108,11 +113,9 @@ const FeaturedStoriesAdmin = () => {
               <h3 className="text-lg sm:text-xl font-bold text-[#00BFFF] break-words mb-2">
                 {story.title}
               </h3>
-
               <p className="text-sm text-gray-300 break-words mb-3 line-clamp-4">
                 {story.desc}
               </p>
-
               <div className="w-full h-40 sm:h-36">
                 <iframe
                   src={story.videoUrl}
@@ -143,11 +146,9 @@ const FeaturedStoriesAdmin = () => {
       {modalOpen && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-50 p-4">
           <div className="bg-[#222] border border-[#444] w-full max-w-lg p-6 rounded-2xl shadow-[0_0_30px_rgba(232,107,64,0.4)]">
-
             <h2 className="text-xl sm:text-2xl font-bold text-[#E86B40] mb-4 text-center">
               {editingStory ? "Edit Story" : "Add New Story"}
             </h2>
-
             <label className="block text-gray-300 mb-1">Title</label>
             <input
               type="text"
@@ -156,7 +157,6 @@ const FeaturedStoriesAdmin = () => {
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
             />
-
             <label className="block text-gray-300 mb-1">Description</label>
             <textarea
               placeholder="Description"
@@ -164,7 +164,6 @@ const FeaturedStoriesAdmin = () => {
               onChange={(e) => setForm({ ...form, desc: e.target.value })}
               className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
             />
-
             <label className="block text-gray-300 mb-1">YouTube Video URL</label>
             <input
               type="text"
@@ -173,7 +172,6 @@ const FeaturedStoriesAdmin = () => {
               onChange={(e) => setForm({ ...form, videoUrl: e.target.value })}
               className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4 outline-none focus:border-[#E86B40]"
             />
-
             <div className="flex flex-col sm:flex-row justify-end gap-3">
               <button
                 onClick={() => setModalOpen(false)}
@@ -181,7 +179,6 @@ const FeaturedStoriesAdmin = () => {
               >
                 Cancel
               </button>
-
               <button
                 onClick={saveStory}
                 className="px-4 py-2 bg-[#E86B40] text-black font-semibold rounded hover:bg-[#ff8a5c] w-full sm:w-auto"
@@ -189,11 +186,9 @@ const FeaturedStoriesAdmin = () => {
                 Save
               </button>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 };
