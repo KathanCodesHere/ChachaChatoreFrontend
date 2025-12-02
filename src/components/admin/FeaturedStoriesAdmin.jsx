@@ -15,13 +15,29 @@ const FeaturedStoriesAdmin = () => {
   const fetchStories = async () => {
     try {
       const res = await axios.get(API_URL);
-      if (res.data.status === "success") setStories(res.data.data);
+      if (res.data.status === "success") {
+        setStories(res.data.data);
+      }
     } catch (e) {}
   };
 
   useEffect(() => {
     fetchStories();
   }, []);
+
+  useEffect(() => {
+    if (modalOpen && editingStory) {
+      titleRef.current.value = editingStory.title;
+      descRef.current.value = editingStory.desc;
+      videoRef.current.value = editingStory.videoUrl;
+    }
+
+    if (modalOpen && !editingStory) {
+      titleRef.current.value = "";
+      descRef.current.value = "";
+      videoRef.current.value = "";
+    }
+  }, [modalOpen, editingStory]);
 
   const saveStory = async (e) => {
     e.preventDefault();
@@ -61,17 +77,11 @@ const FeaturedStoriesAdmin = () => {
 
   const openAddModal = () => {
     setEditingStory(null);
-    if (titleRef.current) titleRef.current.value = "";
-    if (descRef.current) descRef.current.value = "";
-    if (videoRef.current) videoRef.current.value = "";
     setModalOpen(true);
   };
 
   const openEditModal = (story) => {
     setEditingStory(story);
-    if (titleRef.current) titleRef.current.value = story.title;
-    if (descRef.current) descRef.current.value = story.desc;
-    if (videoRef.current) videoRef.current.value = story.videoUrl;
     setModalOpen(true);
   };
 

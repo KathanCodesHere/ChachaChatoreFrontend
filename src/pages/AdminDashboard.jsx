@@ -1,14 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import FeaturedStoriesAdmin from "../components/admin/FeaturedStoriesAdmin";
 import RecipesInActionAdmin from "../components/admin/RecipesInActionAdmin";
 import GetInTouchAdmin from "../components/admin/GetInTouchAdmin";
 import ClientsAdmin from "../components/admin/ClientsAdmin";
 import LatestArticlesAdmin from "@/components/admin/LatestArticlesAdmin";
-import { Menu } from "lucide-react";
+import { Menu, LogOut } from "lucide-react";
 
 const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState("featured");
-  const [showSidebar, setShowSidebar] = useState(false); // MOBILE SIDEBAR
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  // 🔥 Token Verify on Dashboard Load
+  useEffect(() => {
+    const token = localStorage.getItem("admin_token");
+
+    if (!token) {
+      window.location.href = "/admin";
+      return;
+    }
+
+    // Optional: server-side verify
+    axios.post("https://chachachatore.com/services/admin/verify.php", { token })
+      .then(res => {
+        if (res.data.status !== "success") {
+          localStorage.removeItem("admin_token");
+          window.location.href = "/admin";
+        }
+      })
+      .catch(() => {
+        localStorage.removeItem("admin_token");
+        window.location.href = "/admin";
+      });
+  }, []);
+
+  // 🔥 Logout Function
+  const handleLogout = () => {
+    localStorage.removeItem("admin_token");
+    window.location.href = "/admin";
+  };
 
   return (
     <div className="flex min-h-screen bg-[#1b1b1b] text-[#F0ECD9] relative">
@@ -28,7 +58,7 @@ const AdminDashboard = () => {
         transform transition-transform duration-300 rounded-r-2xl
         ${showSidebar ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 z-40`}
       >
-        {/* Title Section */}
+        {/* Title */}
         <div className="mb-6 pb-4 border-b border-[#333]">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-[#E86B40] to-[#ff9d6e] bg-clip-text text-transparent">
             Admin Dashboard
@@ -61,6 +91,18 @@ const AdminDashboard = () => {
               {label}
             </button>
           ))}
+        </div>
+
+        {/* 🔥 LOGOUT BUTTON */}
+        <div className="absolute bottom-6 left-6 right-6">
+          <button
+            onClick={handleLogout}
+            className="flex items-center justify-center gap-2 w-full py-3 px-4 
+            bg-[#E86B40] text-[#1b1b1b] font-semibold rounded-xl 
+            hover:bg-[#f0ecd9] hover:text-[#E86B40] transition shadow-md"
+          >
+            <LogOut size={20} /> Logout
+          </button>
         </div>
       </aside>
 
