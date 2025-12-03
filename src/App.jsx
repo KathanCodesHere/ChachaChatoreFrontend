@@ -10,6 +10,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import WorksPage from './pages/Workpage'
 import WorkWithChacha from './pages/WorkWithChacha'
 import ScrollToTop from './components/ScrollToTop'
+import ProtectedRoute from "./components/ProtectedRoute";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,7 +23,10 @@ const App = () => {
         <Route path='/production' element={<Production/>}></Route>
         {/* <Route path='/work' element={<Work/>}></Route> */}
         <Route path="/admin" element={<AdminLogin />} ></Route>
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-dashboard" element={<ProtectedRoute><AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/works" element={<WorksPage />} />
         <Route path="/WorkWithChacha" element={<WorkWithChacha />} />
       </Routes>

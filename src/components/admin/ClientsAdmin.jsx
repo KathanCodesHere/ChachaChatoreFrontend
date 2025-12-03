@@ -168,7 +168,7 @@ export default function ClientsAdmin() {
             </h2>
 
             <label className="block text-gray-300 mb-1">Upload Image</label>
-            <input type="file" accept="image/*" className="w-full mb-3" onChange={(e) => { 
+            <input type="file" accept="image/*" className="w-full mb-3 w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 file:bg-[#333] file:border-0 file:text-white file:px-3 file:py-1 file:rounded" onChange={(e) => { 
               const file = e.target.files[0];
                 if (file) {
                   const reader = new FileReader();
