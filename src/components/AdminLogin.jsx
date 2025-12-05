@@ -20,10 +20,9 @@ const AdminLogin = () => {
       console.log("API RESPONSE:", res.data);
 
       if (res.data.status === "success") {
-        // 🔥 TOKEN SAVE
         localStorage.setItem("admin_token", res.data.token);
 
-        alert("Login Successful!");
+        // alert("Login Successful!");
         navigate("/admin-dashboard"); // redirect
       } else {
         alert(res.data.message || "Wrong username or password");

@@ -65,7 +65,7 @@ export default function RecipeVideos() {
     setTimeout(() => {
       titleRef.current.value = video.video_title;
       urlRef.current.value = video.video_url;
-      videoIdRef.current.value = video.video_id;
+      // videoIdRef.current.value = video.video_id;
     }, 0);
   };
 
@@ -154,7 +154,7 @@ export default function RecipeVideos() {
             </h2>
 
             <p className="text-gray-400 text-xs mt-1 break-all">{video.video_url}</p>
-            <p className="text-gray-500 text-xs">Video ID: {video.video_id}</p>
+            {/* <p className="text-gray-500 text-xs">Video ID: {video.video_id}</p> */}
 
             {/* ACTION BUTTONS */}
             <div className="flex gap-4 mt-3">
@@ -191,9 +191,9 @@ export default function RecipeVideos() {
             <input type="text" ref={urlRef} className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-3 outline-none focus:border-[#E86B40]"
             />
 
-            <label className="text-sm text-gray-300">Video ID</label>
+            {/* <label className="text-sm text-gray-300">Video ID</label>
             <input type="text" ref={videoIdRef} className="w-full bg-[#1b1b1b] text-white border border-[#555] p-2 rounded mb-4 outline-none focus:border-[#E86B40]"
-            />
+            /> */}
 
             <div className="flex flex-col sm:flex-row justify-end gap-3">
               <button

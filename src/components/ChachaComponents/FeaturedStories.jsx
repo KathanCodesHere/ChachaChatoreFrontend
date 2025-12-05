@@ -30,7 +30,7 @@ const FeaturedStories = () => {
   return (
     <section
       id="stories"
-      className="relative bg-[#1b1b1b] text-[#f0ecd9] py-15 px-4 sm:px-8 md:px-16 overflow-hidden"
+      className="relative bg-[#1b1b1b] text-[#f0ecd9] py-20 px-4 sm:px-8 md:px-16 overflow-hidden"
     >
       {/* Header */}
       <motion.div
