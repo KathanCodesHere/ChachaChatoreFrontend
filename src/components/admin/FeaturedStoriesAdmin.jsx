@@ -94,16 +94,26 @@ const FeaturedStoriesAdmin = () => {
         </button>
       </div>
 
+      {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {stories.map((story) => (
-          <div key={story.id} className="bg-[#242424] p-4 rounded-xl border">
-            <h3 className="text-xl font-bold text-[#00BFFF]">{story.title}</h3>
-            <p className="text-sm text-gray-300">{story.desc}</p>
+          <div
+            key={story.id}
+            className="bg-[#242424] p-4 rounded-xl border flex flex-col"
+          >
+            {/* Content */}
+            <div className="flex-grow">
+              <h3 className="text-xl font-bold text-[#00BFFF]">{story.title}</h3>
+              <p className="text-sm text-gray-300">{story.desc}</p>
 
-            <div className="w-full h-40 mt-2">
-              <iframe src={story.videoUrl} className="w-full h-full rounded-lg"></iframe>
+              <div className="w-full h-40 mt-2">
+                <iframe
+                  src={story.videoUrl}
+                  className="w-full h-full rounded-lg"
+                ></iframe>
+              </div>
             </div>
-
+            {/* Buttons always bottom */}
             <div className="flex gap-3 mt-4">
               <button
                 onClick={() => openEditModal(story)}
@@ -121,7 +131,7 @@ const FeaturedStoriesAdmin = () => {
           </div>
         ))}
       </div>
-
+      {/* MODAL */}
       {modalOpen && (
         <div className="fixed inset-0 bg-black/70 flex justify-center items-center p-4">
           <form

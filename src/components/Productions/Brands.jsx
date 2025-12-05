@@ -13,7 +13,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <section className="bg-black text-[#f0ecd9] py-14 md:py-30 pt-32 relative overflow-hidden w-full" id='comm'>
+    <section className="bg-black text-[#f0ecd9] py-14 md:py-35 pt-32 relative overflow-hidden w-full" id='comm'>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}

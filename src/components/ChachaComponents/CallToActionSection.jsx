@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const CallToActionSection = () => {
   return (
-    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-16 px-4 sm:px-8 md:px-16" id='contact'>
+    <section className="bg-[#1b1b1b] text-[#f0ecd9] py-25 px-4 sm:px-8 md:px-16" id='contact'>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
